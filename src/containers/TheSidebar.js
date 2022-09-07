@@ -1,4 +1,4 @@
-import TheFooter from "../components/TheSidebar/TheFooter";
+import TheFooter from "../components/TheSidebar/TheFooter/TheFooter";
 import TheLogo from "../components/TheSidebar/TheLogo";
 import TheNav from "../components/TheSidebar/TheNav/TheNav";
 import TheSidebarOverlay from "../components/TheSidebar/TheSidebarOverlay";
