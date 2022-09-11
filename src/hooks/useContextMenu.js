@@ -1,58 +1,19 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import usePosition from "./useContextMenuPosition";
 
-const clickPosition = { x: null, y: null };
-
-const useContextMenu = () => {
-  const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
-  const contextMenuRef = useRef(null);
-
-  const updateContextMenuHorizontalPosition = () => {
-    const MenuWidth = contextMenuRef.current.offsetWidth;
-    const shoudMoveLeft = MenuWidth > window.innerWidth - clickPosition.x;
-
-    contextMenuRef.current.style.left = shoudMoveLeft
-      ? `${clickPosition.x - MenuWidth}px`
-      : `${clickPosition.x}px`;
-  };
-
-  const updateContextMenuVerticalPosition = () => {
-    const MenuHeight = contextMenuRef.current.offsetHeight;
-    const shoudMoveUp = MenuHeight > window.innerHeight - clickPosition.y;
-
-    contextMenuRef.current.style.top = shoudMoveUp
-      ? `${clickPosition.y - MenuHeight}px`
-      : `${clickPosition.y}px`;
-  };
-
-  const updateContextMenuPosition = () => {
-    updateContextMenuHorizontalPosition();
-    updateContextMenuVerticalPosition();
-  };
-
-  useLayoutEffect(() => {
-    if (isContextMenuOpen) updateContextMenuPosition();
-  });
-
-  const handleContextMenuOpen = (e) => {
-    e.preventDefault();
-    setIsContextMenuOpen(true);
-
-    clickPosition.x = e.clientX;
-    clickPosition.y = e.clientY;
-  };
-
-  const handleContextMenuClose = () => {
-    setIsContextMenuOpen(false);
-  };
+const useContextMenu = (items) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef(null);
+  const move = usePosition(ref, isOpen); // position
 
   useEffect(() => {
-    if (!isContextMenuOpen) return;
+    if (!isOpen) return;
 
     function handleClickAway(e) {
-      if (!contextMenuRef.current.contains(e.target)) handleContextMenuClose();
+      if (!ref.current.contains(e.target)) handleClose();
     }
     function handleEsc(e) {
-      if (e.key === "Escape") handleContextMenuClose();
+      if (e.key === "Escape") handleClose();
     }
 
     document.addEventListener("mousedown", handleClickAway);
@@ -64,10 +25,21 @@ const useContextMenu = () => {
     };
   });
 
+  const handleOpen = (e) => {
+    e.preventDefault();
+    move(e.clientX, e.clientY); // position
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   return {
-    handleContextMenuOpen,
-    isContextMenuOpen,
-    contextMenuRef,
+    handleOpen,
+    isOpen,
+    ref,
+    items,
   };
 };
 

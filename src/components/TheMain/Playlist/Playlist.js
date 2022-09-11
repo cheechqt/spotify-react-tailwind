@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "react";
-import useContextMenu from "../../../hooks/useContextMenu";
+import useMenu from "../../../hooks/useContextMenu";
 
 import PlaylistButtonPlay from "./PlaylistButtonPlay";
 import PlaylistCover from "./PlaylistCover";
@@ -40,19 +40,14 @@ const Playlist = ({
   description,
   toggleScrolling,
 }) => {
-  const [menuItems, setMenuItems] = useState(generateMenuItems());
+  const [menuItems, setMenuItems] = useState(generateMenuItems);
+  const menu = useMenu(menuItems);
 
-  const {
-    handleContextMenuOpen: handleMenuOpen,
-    isContextMenuOpen: isMenuOpen,
-    contextMenuRef: menuRef,
-  } = useContextMenu();
-
-  useLayoutEffect(() => toggleScrolling(!isMenuOpen));
+  useLayoutEffect(() => toggleScrolling(!menu.isOpen));
 
   useEffect(() => {
     const handleAltKeydown = (e) => {
-      if (!isMenuOpen) return;
+      if (!menu.isOpen) return;
       if (e.key === "Alt") {
         setMenuItems(generateMenuItems(true));
         e.preventDefault();
@@ -71,7 +66,7 @@ const Playlist = ({
     };
   });
 
-  const bgClasses = isMenuOpen
+  const bgClasses = menu.isOpen
     ? "bg-[#272727]"
     : "bg-[#181818] hover:bg-[#272727]";
 
@@ -79,7 +74,7 @@ const Playlist = ({
     <a
       href="/"
       className={`p-4 rounded-mb  duration-200 group relative ${classes} ${bgClasses}`}
-      onContextMenu={handleMenuOpen}
+      onContextMenu={menu.handleOpen}
       onClick={(e) => e.preventDefault()}
     >
       <div className="relative">
@@ -88,11 +83,11 @@ const Playlist = ({
       </div>
       <PlaylistTitle title={title} />
       <PlaylistDescription description={description} />
-      {isMenuOpen && (
+      {menu.isOpen && (
         <PlaylistContextMenu
-          menuItems={menuItems}
+          menuItems={menu.items}
           classes="fixed divide-y divide-[#3e3e3e]"
-          ref={menuRef}
+          ref={menu.ref}
         />
       )}
     </a>
