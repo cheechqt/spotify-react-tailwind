@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import useMenu from "../../../hooks/useContextMenu";
 
 import PlaylistButtonPlay from "./PlaylistButtonPlay";
@@ -6,32 +6,7 @@ import PlaylistCover from "./PlaylistCover";
 import PlaylistDescription from "./PlaylistDescription";
 import PlaylistTitle from "./PlaylistTitle";
 import PlaylistContextMenu from "./PlaylistContextMenu/PlaylistContextMenu";
-
-const generateMenuItems = (isAlternate = false) => {
-  return [
-    {
-      label: "Add to Your Library",
-    },
-    {
-      label: "Share",
-      submenuItems: [
-        {
-          label: isAlternate ? "Copy Spotify URL" : "Copy link to playlist",
-          classes: "min-w-[150px]",
-        },
-        {
-          label: "Embed playlist",
-        },
-      ],
-    },
-    {
-      label: "About recommendations",
-    },
-    {
-      label: "Open in Desktop app",
-    },
-  ];
-};
+import BaseToast from "../../Base/BaseToast";
 
 const Playlist = ({
   classes,
@@ -40,6 +15,41 @@ const Playlist = ({
   description,
   toggleScrolling,
 }) => {
+  const [isToastShown, setIsToastShown] = useState();
+  const closeToastTimer = useRef();
+
+  const generateMenuItems = (isAlternate = false) => {
+    return [
+      {
+        label: "Add to Your Library",
+      },
+      {
+        label: "Share",
+        submenuItems: [
+          {
+            label: isAlternate ? "Copy Spotify URL" : "Copy link to playlist",
+            classes: "min-w-[150px]",
+            action: () => {
+              navigator.clipboard.writeText(title).then(() => {
+                menu.handleClose();
+                showToast();
+              });
+            },
+          },
+          {
+            label: "Embed playlist",
+          },
+        ],
+      },
+      {
+        label: "About recommendations",
+      },
+      {
+        label: "Open in Desktop app",
+      },
+    ];
+  };
+
   const [menuItems, setMenuItems] = useState(generateMenuItems);
   const menu = useMenu(menuItems);
 
@@ -66,31 +76,44 @@ const Playlist = ({
     };
   });
 
+  const showToast = () => {
+    setIsToastShown(true);
+
+    closeToastTimer.current = setTimeout(hideToast, 3000);
+  };
+
+  const hideToast = () => {
+    setIsToastShown(false);
+  };
+
   const bgClasses = menu.isOpen
     ? "bg-[#272727]"
     : "bg-[#181818] hover:bg-[#272727]";
 
   return (
-    <a
-      href="/"
-      className={`p-4 rounded-mb  duration-200 group relative ${classes} ${bgClasses}`}
-      onContextMenu={menu.handleOpen}
-      onClick={(e) => e.preventDefault()}
-    >
-      <div className="relative">
-        <PlaylistCover url={coverUrl} />
-        <PlaylistButtonPlay />
-      </div>
-      <PlaylistTitle title={title} />
-      <PlaylistDescription description={description} />
-      {menu.isOpen && (
-        <PlaylistContextMenu
-          menuItems={menu.items}
-          classes="fixed divide-y divide-[#3e3e3e]"
-          ref={menu.ref}
-        />
-      )}
-    </a>
+    <>
+      <a
+        href="/"
+        className={`p-4 rounded-mb  duration-200 group relative ${classes} ${bgClasses}`}
+        onContextMenu={menu.handleOpen}
+        onClick={(e) => e.preventDefault()}
+      >
+        <div className="relative">
+          <PlaylistCover url={coverUrl} />
+          <PlaylistButtonPlay />
+        </div>
+        <PlaylistTitle title={title} />
+        <PlaylistDescription description={description} />
+        {menu.isOpen && (
+          <PlaylistContextMenu
+            menuItems={menu.items}
+            classes="fixed divide-y divide-[#3e3e3e]"
+            ref={menu.ref}
+          />
+        )}
+      </a>
+      {isToastShown && <BaseToast>Link copied to clipboard</BaseToast>}
+    </>
   );
 };
 

@@ -37,6 +37,7 @@ const useContextMenu = (items) => {
 
   return {
     handleOpen,
+    handleClose,
     isOpen,
     ref,
     items,

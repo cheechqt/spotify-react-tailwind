@@ -16,7 +16,7 @@ function PlaylistContextMenu({ classes, menuItems }, ref) {
       className={`bg-[#282828] text-[#eaeaea] text-sm p-1 rounded shadow-3xl cursor-default whitespace-nowrap z-10 ${classes}`}
       ref={ref}
     >
-      {menuItems.map(({ label, submenuItems, classes }) => {
+      {menuItems.map(({ label, action, submenuItems, classes }) => {
         if (submenuItems) {
           return (
             <PlaylistContextMenuItemWithSubmenu
@@ -31,6 +31,7 @@ function PlaylistContextMenu({ classes, menuItems }, ref) {
         return (
           <PlaylistContextMenuItem
             key={label}
+            onClick={action}
             classes={classes}
             onMouseEnter={closePreviousSubmenuIfOpen}
           >
