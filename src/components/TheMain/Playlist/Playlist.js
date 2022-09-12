@@ -14,7 +14,7 @@ const generateMenuItems = (isAlternate = false) => {
     },
     {
       label: "Share",
-      subMenuItems: [
+      submenuItems: [
         {
           label: isAlternate ? "Copy Spotify URL" : "Copy link to playlist",
           classes: "min-w-[150px]",
