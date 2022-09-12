@@ -1,4 +1,4 @@
-import React, { useState, useImperativeHandle, useRef } from "react";
+import { useState, useImperativeHandle, useRef, forwardRef } from "react";
 
 const BaseToast = (_, ref) => {
   const [opacityClass, setOpacityClass] = useState("opacity-0");
@@ -11,7 +11,7 @@ const BaseToast = (_, ref) => {
 
       setOpacityClass("opacity-1");
       setMessage(message);
-      
+
       hideTimer.current = setTimeout(() => setOpacityClass("opacity-0"), 3000);
     },
   }));
@@ -25,4 +25,4 @@ const BaseToast = (_, ref) => {
   );
 };
 
-export default React.forwardRef(BaseToast);
+export default forwardRef(BaseToast);

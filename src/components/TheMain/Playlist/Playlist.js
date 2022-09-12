@@ -14,11 +14,16 @@ const Playlist = ({
   description,
   toggleScrolling,
   showToast,
+  showPopover,
 }) => {
   const generateMenuItems = (isAlternate = false) => {
     return [
       {
         label: "Add to Your Library",
+        action: () => {
+          menu.handleClose();
+          showPopover();
+        },
       },
       {
         label: "Share",

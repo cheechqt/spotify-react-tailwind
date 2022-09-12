@@ -3,8 +3,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
-import TheButtonLogin from "../components/TheHeader/TheButtonLogin";
-import TheButtonRegister from "../components/TheHeader/TheButtonRegister";
+import BaseButton from "../components/Base/BaseButton";
 
 function TheHeader() {
   return (
@@ -24,8 +23,8 @@ function TheHeader() {
         </a>
       </div>
       <div className="">
-        <TheButtonRegister />
-        <TheButtonLogin />
+        <BaseButton classes="text-gray-400 hover:text-white">Sign up</BaseButton>
+        <BaseButton primary>Log in</BaseButton>
       </div>
     </header>
   );
