@@ -6,6 +6,7 @@ import {
   HeartIcon,
 } from "@heroicons/react/24/outline";
 import NavItem from "./NavItem";
+import { MIN_DESKTOP_WIDTH } from "../../../constants/constants";
 
 const activeNavItemClasses =
   "flex items-center text-white bg-[#282828] mx-2 px-4 py-2 rounded";
@@ -55,7 +56,7 @@ const TheNav = ({ showPopover }) => {
       icon: <HeartIcon className="w-6 h-6" />,
       action: (target) => {
         let offset = null;
-        if (window.innerWidth >= 700) {
+        if (window.innerWidth >= MIN_DESKTOP_WIDTH) {
           const { top, right, height } = target.getBoundingClientRect();
           offset = {
             top: top - (height / 3) * 2,
