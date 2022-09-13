@@ -5,18 +5,25 @@ import {
   useRef,
   useState,
 } from "react";
-import BaseButton from "./BaseButton";
+import BaseButton from "../BaseButton";
+import BasePopoverTriangle from "./BasePopoverTriangle";
 
-const HIDDEN_CLASSES = "opacity-0 translate-x-1 pointer-events-none";
+const isSmallScreen = window.innerWidth < 700;
+const translateClass = isSmallScreen ? "translate-x-1" : "transalte-y-1";
+const HIDDEN_CLASSES = `opacity-0 ${translateClass} pointer-events-none`;
 
 const BasePopover = (_, ref) => {
   const nodeRef = useRef();
   const [classes, setClasses] = useState(HIDDEN_CLASSES);
+  const [target, setTarget] = useState();
   const [title, setTitle] = useState();
   const [description, setDescription] = useState();
 
   useEffect(() => {
+    if (!target) return;
+
     const handleClickAway = (e) => {
+      if (e.target.parentNode.contains(e.target)) return;
       if (!nodeRef.current.contains(e.target)) hide();
     };
 
@@ -27,28 +34,33 @@ const BasePopover = (_, ref) => {
 
   useImperativeHandle(ref, () => ({ show }));
 
-  const show = (title, description, target) => {
-    moveTo(target);
+  const show = (title, description, nextTarget, offset) => {
+    if (target === nextTarget) return;
+
+    moveTo(offset ? offset : calculateTargetOffset(nextTarget));
+    setTarget(nextTarget);
     setTitle(title);
     setDescription(description);
     setClasses("");
   };
 
   const hide = () => {
+    setTarget(null);
     setClasses(HIDDEN_CLASSES);
   };
 
-  const moveTo = (target) => {
-    const offset = target;
-
-    if (target instanceof Element) {
-      const { top, right, height } = target.getBoundingClientRect();
-      offset.top = top - (height / 3) * 2;
-      offset.left = right + 30;
-    }
-
+  const moveTo = (offset) => {
     nodeRef.current.style.top = `${offset.top}px`;
     nodeRef.current.style.left = `${offset.left}px`;
+  };
+
+  const calculateTargetOffset = (target) => {
+    const { top, right, left, height } = target.getBoundingClientRect();
+
+    return {
+      top: isSmallScreen ? top + height * 2 : top - (height / 3) * 2,
+      left: isSmallScreen ? left : right + 30,
+    };
   };
 
   return (
@@ -63,9 +75,7 @@ const BasePopover = (_, ref) => {
         <BaseButton onClick={hide}>Not now</BaseButton>
         <BaseButton primary>Log in</BaseButton>
       </div>
-      <div className="w-20 h-20 absolute -top-4 -left-20 flex justify-end items-center overflow-hidden pointer-events-none">
-        <div className="w-3 h-3 bg-[#0e72ea] absolute shadow-3xl translate-x-1/2 rotate-45 pointer-events-auto"></div>
-      </div>
+      <BasePopoverTriangle />
     </div>
   );
 };

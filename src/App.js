@@ -6,7 +6,7 @@ import TheRegistration from "./containers/TheRegistration";
 import TheSidebar from "./containers/TheSidebar";
 import TheSidebarOverlay from "./components/TheSidebar/TheSidebarOverlay";
 import BaseToast from "./components/Base/BaseToast";
-import BasePopover from "./components/Base/BasePopover";
+import BasePopover from "./components/Base/BasePopover/BasePopover";
 
 function App() {
   const toastRef = useRef();
@@ -27,8 +27,8 @@ function App() {
     toastRef.current.show(message);
   };
 
-  const showPopover = (title, description, target) => {
-    popoverRef.current.show(title, description, target);
+  const showPopover = (title, description, target, offset) => {
+    popoverRef.current.show(title, description, target, offset);
   };
 
   const toggleScrolling = (isEnabled) => {

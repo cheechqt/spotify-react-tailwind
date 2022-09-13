@@ -15,13 +15,6 @@ const BaseButton = ({
     >
       {label}
     </button>
-
-    //  <button className="bg-white text-[#2e2e2e] ">
-    //    Log In
-    //  </button>
-    //      <button className=" text-[#fff] ">
-    //     Sign Up
-    //   </button>
   );
 };
 
