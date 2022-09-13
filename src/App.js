@@ -27,8 +27,8 @@ function App() {
     toastRef.current.show(message);
   };
 
-  const showPopover = (title, description) => {
-    popoverRef.current.show(title, description);
+  const showPopover = (title, description, target) => {
+    popoverRef.current.show(title, description, target);
   };
 
   const toggleScrolling = (isEnabled) => {
@@ -52,7 +52,6 @@ function App() {
           <TheMain
             toggleScrolling={toggleScrolling}
             showToast={showToast}
-            showPopover={showPopover}
           />
         </div>
       </div>

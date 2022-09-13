@@ -27,7 +27,8 @@ const BasePopover = (_, ref) => {
 
   useImperativeHandle(ref, () => ({ show }));
 
-  const show = (title, description) => {
+  const show = (title, description, target) => {
+    moveTo(target);
     setTitle(title);
     setDescription(description);
     setClasses("");
@@ -37,9 +38,22 @@ const BasePopover = (_, ref) => {
     setClasses(HIDDEN_CLASSES);
   };
 
+  const moveTo = (target) => {
+    const offset = target;
+
+    if (target instanceof Element) {
+      const { top, right, height } = target.getBoundingClientRect();
+      offset.top = top - (height / 3) * 2;
+      offset.left = right + 30;
+    }
+
+    nodeRef.current.style.top = `${offset.top}px`;
+    nodeRef.current.style.left = `${offset.left}px`;
+  };
+
   return (
     <div
-      className={`fixed top-[227px] left-[200px] z-30 bg-[#0e72ea] text-white tracking-wide rounded-lg shadow-3xl p-4 w-[330px] select-none transition translate-300 ${classes}`}
+      className={`fixed z-30 bg-[#0e72ea] text-white tracking-wide rounded-lg shadow-3xl p-4 w-[330px] select-none transition translate-300 ${classes}`}
       ref={nodeRef}
     >
       <h3 className="text-lg font-bold mb-2">{title}</h3>

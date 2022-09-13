@@ -14,7 +14,6 @@ const Playlist = ({
   description,
   toggleScrolling,
   showToast,
-  showPopover,
 }) => {
   const generateMenuItems = (isAlternate = false) => {
     return [
@@ -22,7 +21,7 @@ const Playlist = ({
         label: "Add to Your Library",
         action: () => {
           menu.handleClose();
-          showPopover();
+          document.querySelector("nav a:nth-child(4)").click();
         },
       },
       {
