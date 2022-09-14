@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { MIN_DESKTOP_WIDTH } from "../../constants/constants";
-import { debounce } from "./../../utils/utils";
+import { debounce } from "../../utils/debounce";
 
 function isCurrentWindowWidthSmall() {
   return window.innerWidth < MIN_DESKTOP_WIDTH;
