@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 
-function useClickAway(ref, handle, shoudHandle = () => false) {
+function useClickAway(ref, handle, shoudHandle = () => true) {
   useEffect(() => {
+    // function handleClickAway(e) {
+    //   if (!ref.current.contains(e.target)) handleClose();
+    // }
     function handleMouseDown(e) {
       if (shoudHandle(e) && !ref.current.contains(e.target)) handle();
     }

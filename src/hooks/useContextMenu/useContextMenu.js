@@ -1,39 +1,33 @@
 import { useEffect, useRef, useState } from "react";
+import useClickAway from "../useClickAway/useClickAway";
 import usePosition from "./useContextMenuPosition";
 
-const useContextMenu = (items) => {
+function useContextMenu(items) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
   const move = usePosition(ref, isOpen); // position
 
+  useClickAway(ref, handleClose, () => isOpen);
+
   useEffect(() => {
     if (!isOpen) return;
 
-    function handleClickAway(e) {
-      if (!ref.current.contains(e.target)) handleClose();
-    }
     function handleEsc(e) {
       if (e.key === "Escape") handleClose();
     }
 
-    document.addEventListener("mousedown", handleClickAway);
-    document.addEventListener("keydown", handleEsc);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickAway);
-      document.removeEventListener("keydown", handleEsc);
-    };
+    return () => document.removeEventListener("keydown", handleEsc);
   });
 
-  const handleOpen = (e) => {
+  function handleOpen(e) {
     e.preventDefault();
     move(e.clientX, e.clientY); // position
     setIsOpen(true);
-  };
+  }
 
-  const handleClose = () => {
+  function handleClose() {
     setIsOpen(false);
-  };
+  }
 
   return {
     handleOpen,
@@ -42,6 +36,6 @@ const useContextMenu = (items) => {
     ref,
     items,
   };
-};
+}
 
 export default useContextMenu;

@@ -1,4 +1,4 @@
-import TheRegistrationButton from "../components/TheRegistration/TheRegistrationButton";
+import BaseButton from "../components/Base/BaseButton";
 import TheRegistrationInfo from "../components/TheRegistration/TheRegistrationInfo";
 
 function TheRegistration() {
@@ -8,7 +8,7 @@ function TheRegistration() {
       href="/"
     >
       <TheRegistrationInfo />
-      <TheRegistrationButton />
+      <BaseButton primary>Sign up free</BaseButton>
     </a>
   );
 }
