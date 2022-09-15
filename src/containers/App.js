@@ -8,15 +8,13 @@ import TheLibrary from "components/TheMain/TheLibrary/TheLibrary";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route key="1" path="/" element={<TheMain />} />
-        <Route path="/signup" element={<TheSignUp />} />
-        <Route path="/login" element={<TheLogin />} />
-        <Route path="/search" element={<TheSearch />} />
-        <Route path="/library" element={<TheLibrary />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<TheMain />} />
+      <Route path="/signup" element={<TheSignUp />} />
+      <Route path="/login" element={<TheLogin />} />
+      <Route path="/search" element={<TheSearch />} />
+      <Route path="/library" element={<TheLibrary />} />
+    </Routes>
   );
 }
 

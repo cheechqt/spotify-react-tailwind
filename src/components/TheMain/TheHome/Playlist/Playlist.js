@@ -86,6 +86,7 @@ const Playlist = ({
       href="/"
       className={`p-4 rounded-mb  duration-200 group relative ${classes} ${bgClasses}`}
       onContextMenu={menu.handleOpen}
+      onTouchStart={menu.handleOpen}
       onClick={(e) => e.preventDefault()}
     >
       <div className="relative">
