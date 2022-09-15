@@ -47,7 +47,7 @@ function BasePopover(_, ref) {
       <p className="text-xs">{description}</p>
       <div className="mt-6 text-right">
         <BaseButton onClick={hide}>Not now</BaseButton>
-        <BaseButton primary>Log in</BaseButton>
+        <BaseButton primary path="/login">Log in</BaseButton>
       </div>
       <BasePopoverTriangle side={isSmallScreen ? "top" : "left"} />
     </div>

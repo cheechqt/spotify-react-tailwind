@@ -1,6 +1,7 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
-const NavItem = ({ classes, icon, children: label, onClick }) => {
+const NavItem = ({ classes, icon, children: label, path, onClick }) => {
   const labelRef = useRef();
 
   const handleClick = (e) => {
@@ -10,12 +11,12 @@ const NavItem = ({ classes, icon, children: label, onClick }) => {
   };
 
   return (
-    <a href="/" className={classes} onClick={handleClick}>
+    <Link to={path} className={classes} onClick={handleClick}>
       {icon}
       <span ref={labelRef} className="ml-4 text-sm font-semibold">
         {label}
       </span>
-    </a>
+    </Link>
   );
 };
 

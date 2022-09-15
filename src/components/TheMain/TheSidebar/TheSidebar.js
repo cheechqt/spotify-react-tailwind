@@ -1,7 +1,7 @@
-import TheFooter from "../components/TheSidebar/TheFooter/TheFooter";
-import TheLogo from "../components/TheSidebar/TheLogo";
-import TheNav from "../components/TheSidebar/TheNav/TheNav";
-import TheSidebarOverlay from "../components/TheSidebar/TheSidebarOverlay";
+import TheFooter from "./TheFooter/TheFooter";
+import TheLogo from "components/TheMain/TheSidebar/TheLogo";
+import TheNav from "components/TheMain/TheSidebar/TheNav/TheNav";
+import TheSidebarOverlay from "components/TheMain/TheSidebar/TheSidebarOverlay";
 
 function TheSidebar({ showPopover }) {
   return (

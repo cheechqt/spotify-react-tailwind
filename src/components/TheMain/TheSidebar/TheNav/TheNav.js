@@ -6,7 +6,7 @@ import {
   HeartIcon,
 } from "@heroicons/react/24/outline";
 import NavItem from "./NavItem";
-import { MIN_DESKTOP_WIDTH } from "../../../constants/constants";
+import { MIN_DESKTOP_WIDTH } from "constants/constants";
 
 const activeNavItemClasses =
   "flex items-center text-white bg-[#282828] mx-2 px-4 py-2 rounded";
@@ -20,16 +20,19 @@ const TheNav = ({ showPopover }) => {
       label: "Home",
       classes: activeNavItemClasses,
       icon: <HomeIcon className="w-6 h-6" />,
+      path: "/",
     },
     {
       label: "Search",
       classes: navItemClasses,
       icon: <MagnifyingGlassIcon className="w-6 h-6" />,
+      path: "/search",
     },
     {
       label: "Your Library",
       classes: `${navItemClasses} mb-6`,
       icon: <ViewColumnsIcon className="w-6 h-6" />,
+      path: "/library",
       action: (target) => {
         showPopover(
           "Enjoy Your Library",
@@ -75,8 +78,14 @@ const TheNav = ({ showPopover }) => {
 
   return (
     <nav>
-      {navItems.map(({ classes, icon, label, action }) => (
-        <NavItem key={label} classes={classes} icon={icon} onClick={action}>
+      {navItems.map(({ classes, icon, label, path, action }) => (
+        <NavItem
+          key={label}
+          classes={classes}
+          icon={icon}
+          onClick={action}
+          path={path}
+        >
           {label}
         </NavItem>
       ))}
