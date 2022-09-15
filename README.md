@@ -3,7 +3,7 @@
 ## Ссылки
 
 - [Репозиторий] (https://github.com/cheechqt/spotify-react-tailwind)
-- [Проект] (https://cheechqt.github.io/spotify-react-tailwind/)
+- [Проект] (https://cheechqt.github.io/spotify-react-tailwind)
 - [Макет] (https://open.spotify.com)
 
 ## Скрипты

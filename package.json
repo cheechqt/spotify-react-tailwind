@@ -2,7 +2,7 @@
   "name": "spotify-react-tailwind",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://cheechqt.github.io/spotify-react-tailwind/",
+  "homepage": "https://cheechqt.github.io/spotify-react-tailwind",
   "dependencies": {
     "@heroicons/react": "^2.0.10",
     "@reduxjs/toolkit": "^1.8.5",
