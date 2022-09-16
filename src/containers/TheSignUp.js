@@ -5,7 +5,7 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import Form from "components/Base/BaseForm";
+import Form from "components/TheLogin/LoginForm";
 import { setUser } from "store/slices/userSlice";
 
 function TheSignUp() {

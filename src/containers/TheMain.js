@@ -45,7 +45,7 @@ function TheMain() {
 
   return (
     <>
-      <div className="flex flex-grow overflow-auto">
+      <div className="flex flex-grow overflow-auto bg-[#121212]">
         <TheSidebar showPopover={showPopover} />
         <div className="flex-1 overflow-auto" ref={contentWrapperRef}>
           <TheHeader isAuth={isAuth} email={email} />
