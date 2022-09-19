@@ -11,7 +11,7 @@ function TheFooter({ isAuth, email }) {
         to="/signup"
       >
         <TheFooterSignupText />
-        <BaseButton primary>Sign up free</BaseButton>
+        <BaseButton primary classes="font-semibold">Sign up free</BaseButton>
       </Link>
     );
   }

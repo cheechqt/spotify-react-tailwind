@@ -5,7 +5,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import Form from "components/TheLogin/LoginForm";
 import { setUser } from "store/slices/userSlice";
 import BaseLogo from "components/Base/BaseLogo";
-import BaseButton from "components/Base/BaseButton";
 import LoginButton from "components/TheLogin/LoginButton";
 
 function TheLogin() {
@@ -31,12 +30,10 @@ function TheLogin() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="my-6 w-full text-center after:border-b-0  after:border after:border-[#dadadb] after:block">
-
         <BaseLogo
           classes="text-black inline-block pb-4"
           sizeClass="md:w-[184px] w-[140px]"
         />
-        
       </div>
       <div className="max-w-[466px] px-2 text-center">
         <p className="text-sm font-bold block pt-4 pb-1">

@@ -25,7 +25,7 @@ const BaseButton = ({
 
   return (
     <button
-      className={`font-semibold leading-5 py-[14px] px-[17px] sm:px-[38px] rounded-full hover:scale-105 ${typeClasses} ${classes}`}
+      className={`leading-5 py-[14px] px-[17px] sm:px-[32px] rounded-full hover:scale-105 ${typeClasses} ${classes}`}
       onClick={handleOnClick}
     >
       {label}
