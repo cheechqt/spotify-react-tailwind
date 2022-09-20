@@ -3,6 +3,7 @@ function SignUpFieldset() {
     <fieldset role="radiogroup" className="pb-6">
       <legend className="pb-2 font-bold text-sm">What's your gender?</legend>
       <div className="flex flex-wrap">
+        
         <div className="py-1 flex justify-center items-center">
           <input
             name="gender"
@@ -12,7 +13,7 @@ function SignUpFieldset() {
             value="male"
             className="accent-[#169b45] h-[16px] w-[16px]"
           />
-          <label className="pl-3 pr-6 text-sm" for="gender_male">
+          <label className="pl-3 pr-6 text-sm" htmlFor="gender_male">
             Male
           </label>
         </div>
@@ -25,7 +26,7 @@ function SignUpFieldset() {
             value="female"
             className="accent-[#169b45] h-[16px] w-[16px]"
           />
-          <label className="pl-3 pr-6 text-sm" for="gender_female">
+          <label className="pl-3 pr-6 text-sm" htmlFor="gender_female">
             Female
           </label>
         </div>
@@ -38,7 +39,7 @@ function SignUpFieldset() {
             value="nonbinary"
             className="accent-[#169b45] h-[16px] w-[16px]"
           />
-          <label className="pl-3 pr-6 text-sm" for="gender_nonbinary">
+          <label className="pl-3 pr-6 text-sm" htmlFor="gender_nonbinary">
             Non-binary
           </label>
         </div>
@@ -51,7 +52,7 @@ function SignUpFieldset() {
             value="other"
             className="accent-[#169b45] h-[16px] w-[16px]"
           />
-          <label className="pl-3 pr-6 text-sm" for="gender_other">
+          <label className="pl-3 pr-6 text-sm" htmlFor="gender_other">
             Other
           </label>
         </div>
@@ -64,7 +65,7 @@ function SignUpFieldset() {
             value="prefernottosay"
             className="accent-[#169b45] h-4 w-4"
           />
-          <label className="pl-3 pr-6 text-sm" for="gender_prefernottosay">
+          <label className="pl-3 pr-6 text-sm" htmlFor="gender_prefernottosay">
             Prefer not to say
           </label>
         </div>

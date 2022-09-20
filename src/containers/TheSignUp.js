@@ -9,13 +9,12 @@ import { setUser } from "store/slices/userSlice";
 import SignUpForm from "components/TheSignUp/SignUpForm";
 import BaseLogo from "components/Base/BaseLogo";
 import SignUpButton from "components/TheSignUp/SignUpButton";
-import SignUpFooter from "components/TheSignUp/SignUpFooter";
 
 function TheSignUp() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleRegister = (email, password) => {
+  const handleRegister = (email, password, name) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
@@ -48,10 +47,16 @@ function TheSignUp() {
         </h2>
       </div>
       <div className="flex flex-col items-center">
-        <SignUpButton bgAndTextClasses="bg-[#3b5999] text-[#fff]">
+        <SignUpButton
+          icon="facebook"
+          bgAndTextClasses="bg-[#3b5999] text-[#fff]"
+        >
           Sign up with Facebook
         </SignUpButton>
-        <SignUpButton bgAndTextClasses="bg-[#fff] text-[#535353] border-2 border-[#191919]">
+        <SignUpButton
+          icon="google"
+          bgAndTextClasses="bg-[#fff] text-[#535353] border-2 border-[#191919]"
+        >
           Sign up with Google
         </SignUpButton>
       </div>

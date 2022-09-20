@@ -3,7 +3,7 @@ import { useState } from "react";
 import Input from "components/Base/BaseAuthInput";
 import Checkbox from "components/Base/BaseCheckbox";
 import SignUpFieldset from "./SignUpFieldset";
-import SignUpFooter from "./SignUpFooter";
+import SignUpFooter from "./SignUpFormFooter";
 
 function SignUpForm({ handleClick }) {
   const [email, setEmail] = useState("");
@@ -70,6 +70,7 @@ function SignUpForm({ handleClick }) {
           marketing purposes.
         </Checkbox>
       </div>
+      
       <SignUpFooter handleClick={handleClick} />
     </form>
   );
