@@ -7,8 +7,9 @@ import {
 } from "firebase/auth";
 import { setUser } from "store/slices/userSlice";
 import SignUpForm from "components/TheSignUp/SignUpForm";
-import BaseLogo from "components/Base/BaseLogo";
 import SignUpButton from "components/TheSignUp/SignUpButton";
+import SignUpLogo from "components/TheSignUp/SignUpLogo";
+import SignUpSeparator from "components/TheSignUp/SignUpSeparator";
 
 function TheSignUp() {
   const dispatch = useDispatch();
@@ -37,15 +38,8 @@ function TheSignUp() {
 
   return (
     <div className="max-w-[450px] w-full mx-auto pb-[130px] px-[24px] md:px-0">
-      <div className="pt-[40px] pb-[32px] flex flex-col justify-center items-center">
-        <BaseLogo
-          classes="text-black inline-block"
-          sizeClass="md:w-[130px] w-[90px]"
-        />
-        <h2 className="mt-[32px] text-center text-3xl font-bold tracking-tighter">
-          Sign up for free to start listening.
-        </h2>
-      </div>
+      <SignUpLogo />
+
       <div className="flex flex-col items-center">
         <SignUpButton
           icon="facebook"
@@ -60,11 +54,9 @@ function TheSignUp() {
           Sign up with Google
         </SignUpButton>
       </div>
-      <div className="flex flex-row items-center w-[85%] mt-3 mx-auto mb-4 mt-0">
-        <hr className="w-[42%] ml-[12px] mr-[20px] border-t-1 border-[#eeeeef] border"></hr>
-        <span className="text-center text-large text-base font-light">or</span>
-        <hr className="w-[42%] ml-[20px] mr-[12px] border-t-1 border-[#eeeeef] border"></hr>
-      </div>
+
+      <SignUpSeparator />
+      
       <SignUpForm title="Sign up" handleClick={handleRegister} />
     </div>
   );

@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import Form from "components/TheLogin/LoginForm";
 import { setUser } from "store/slices/userSlice";
-import BaseLogo from "components/Base/BaseLogo";
-import LoginButton from "components/TheLogin/LoginButton";
+import LoginLogo from "components/TheLogin/LoginLogo";
+import LoginButtonsGroup from "components/TheLogin/LoginButtonsGroup";
+import LoginFooter from "components/TheLogin/LoginFooter";
 
 function TheLogin() {
   const dispatch = useDispatch();
@@ -29,52 +30,14 @@ function TheLogin() {
 
   return (
     <div className="flex flex-col h-screen overflow-x-hidden">
-      <div className="mb-8 w-full text-center after:border-b-0  after:border after:border-[#dadadb] after:block">
-        <BaseLogo
-          classes="text-black inline-block pb-4"
-          sizeClass="md:w-[184px] w-[140px]"
-        />
-      </div>
-      <div className="max-w-[450px] w-full mx-auto pb-[130px] px-[24px] md:px-0">
-        <div className="px-2 text-center w-full">
-          <p className="text-sm font-bold block pt-4 pb-1">
-            To continue, log in to Spotify.
-          </p>
+      <LoginLogo />
 
-          <LoginButton
-            icon="facebook"
-            bgAndTextClasses="bg-[#3b5999] text-[#fff]"
-          >
-            Continue with Facebook
-          </LoginButton>
-          <LoginButton icon="apple" bgAndTextClasses="bg-[#191919] text-[#fff]">
-            Continue with Apple
-          </LoginButton>
-          <LoginButton
-            icon="google"
-            bgAndTextClasses="bg-[#fff] text-[#6a6a6a]"
-          >
-            Continue with Google
-          </LoginButton>
-
-          <div className="flex flex-row mt-3">
-            <hr className="flex-1 ml-[12px] mr-[20px] border-t-1 border-[#eeeeef] border"></hr>
-            <span className="text-center text-xs font-bold">OR</span>
-            <hr className="flex-1 ml-[20px] mr-[12px] border-t-1 border-[#eeeeef] border"></hr>
-          </div>
-        </div>
+      <div className="max-w-[450px] w-full mx-auto p-3 md:px-0">
+        <LoginButtonsGroup />
 
         <Form handleClick={handleLogin} />
 
-        <div className="px-2 w-full">
-          <hr className="border-[1px] mb-5"></hr>
-          <div className="flex flex-col text-center justify-center items-center pb-2">
-            <p className="font-bold text-lg mb-4">Don't have an account?</p>
-            <LoginButton bgAndTextClasses="bg-[#fff] text-[#6a6a6a]">
-              sign up for Spotify
-            </LoginButton>
-          </div>
-        </div>
+        <LoginFooter />
       </div>
     </div>
   );

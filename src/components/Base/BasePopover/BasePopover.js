@@ -10,6 +10,7 @@ function BasePopover(_, ref) {
   const nodeRef = useRef();
   const { move, target, setTarget, isSmallScreen } = usePosition(nodeRef, hide);
   const [classes, setClasses] = useState(getHiddenClasses);
+  
 
   useClickAway(nodeRef, hide, shoudHide);
 
