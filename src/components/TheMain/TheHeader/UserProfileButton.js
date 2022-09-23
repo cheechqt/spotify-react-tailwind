@@ -1,6 +1,12 @@
 import BaseButton from "components/Base/BaseButton";
+import { signOut } from "firebase/auth";
+import { auth } from "utils/firebase";
 
 function UserProfileButton({ isAuth, email }) {
+  function handleSignOut() {
+    signOut(auth);
+  }
+
   if (!isAuth) {
     return (
       <div>
@@ -14,7 +20,14 @@ function UserProfileButton({ isAuth, email }) {
     );
   }
 
-  return <div className="text-white">{email}</div>;
+  return (
+    <div className="text-white">
+      {email}
+      <button className="text-white" onClick={handleSignOut}>
+        LOG OUT
+      </button>
+    </div>
+  );
 }
 
 export default UserProfileButton;

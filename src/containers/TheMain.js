@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { useAuth } from "hooks/useAuth/useAuth";
 
 import TheHeader from "../components/TheMain/TheHeader/TheHeader";
 import TheHome from "../components/TheMain/TheHome/TheHome";
@@ -7,15 +6,18 @@ import TheFooter from "../components/TheMain/TheFooter/TheFooter";
 import TheSidebar from "../components/TheMain/TheSidebar/TheSidebar";
 import BaseToast from "../components/Base/BaseToast";
 import BasePopover from "../components/Base/BasePopover/BasePopover";
+import { AuthState } from "Context";
 
 function TheMain() {
-  const { isAuth, email } = useAuth();
-
   const toastRef = useRef();
   const popoverRef = useRef();
 
   const contentWrapperRef = useRef();
   let isScrollingEnabled = true;
+
+  const { user } = AuthState();
+  const email = user?.email;
+  const isAuth = email ? email : undefined;
 
   useEffect(() => {
     const contentWrapper = contentWrapperRef.current;
