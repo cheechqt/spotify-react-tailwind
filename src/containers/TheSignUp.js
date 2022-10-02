@@ -12,12 +12,13 @@ import Input from "components/Base/BaseAuthInput";
 import Checkbox from "components/Base/BaseCheckbox";
 import SignUpFieldset from "components/TheSignUp/SignUpFieldset";
 import SignUpFooter from "components/TheSignUp/SignUpFormFooter";
-import { AuthState } from "../Context.js";
+import BaseButton from "components/Base/BaseButton";
 
 function TheSignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
+  const [name, setName] = useState("");
 
   const navigate = useNavigate();
 
@@ -28,9 +29,6 @@ function TheSignUp() {
         email,
         password
       );
-      const { user } = AuthState();
-      console.log(user);
-      console.log(result);
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -94,8 +92,8 @@ function TheSignUp() {
           <Input
             label="What should we call you?"
             type="text"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Enter a profile name"
           />
         </div>
@@ -114,7 +112,11 @@ function TheSignUp() {
           </Checkbox>
         </div>
 
-        <SignUpFooter handleClick={handleSignUp} />
+        <SignUpFooter handleClick={() => handleSignUp(auth, email, password)} />
+        <BaseButton
+          classes="text-base text-[#000] font-bold border w-[155px] bg-[#1ed760] hover:bg-[#1fdf65] whitespace-nowrap mb-6 mt-0 px-12 py-4"
+          onClick={handleSignUp}
+        ></BaseButton>
       </form>
     </div>
   );
