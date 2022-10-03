@@ -20,6 +20,7 @@ function TheSignUp() {
   const [confirmEmail, setConfirmEmail] = useState("");
   const [name, setName] = useState("");
 
+  
   const navigate = useNavigate();
 
   const handleSignUp = async () => {
