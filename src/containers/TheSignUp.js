@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, setUser } from "utils/firebase";
 
 import SignUpForm from "components/TheSignUp/SignUpForm";
@@ -17,6 +17,10 @@ function TheSignUp() {
         email,
         password
       );
+      await updateProfile(auth.currentUser, {
+        displayName: name,
+        photoURL: "https://fakeimg.pl/100x100/?text=NO%20WAR&font=lobster",
+      });
       const { uid } = result.user;
       setUser(uid, name, email);
       navigate("/");

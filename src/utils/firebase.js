@@ -21,13 +21,13 @@ export async function setUser(
   imageUrl = "https://fakeimg.pl/100x100/?text=NO%20WAR&font=lobster"
 ) {
   try {
-    const userRef = await setDoc(doc(db, "users", userId), {
+    await setDoc(doc(db, "users", userId), {
       userId,
       name,
       email,
       imageUrl,
     });
-    console.log("Document written with ID: ", userRef.id);
+    console.log("Document written with ID: ", userId);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
