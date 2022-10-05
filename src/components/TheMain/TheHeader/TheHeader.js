@@ -5,7 +5,7 @@ import {
 } from "@heroicons/react/24/outline";
 import UserProfileButton from "./UserProfileButton";
 
-function TheHeader({ isAuth, email }) {
+function TheHeader() {
   return (
     <header className="sticky z-10 top-0 bg-[#070707] flex-1 flex items-center justify-between py-[18px] sm:px-[32px] px-[13px]">
       <div className="flex">
@@ -22,7 +22,7 @@ function TheHeader({ isAuth, email }) {
           <ChevronRightIcon className="h-6 w-6" />
         </a>
       </div>
-      <UserProfileButton isAuth={isAuth} email={email} />
+      <UserProfileButton />
     </header>
   );
 }

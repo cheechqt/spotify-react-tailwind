@@ -1,13 +1,18 @@
 import BaseButton from "components/Base/BaseButton";
+import { AuthState } from "Context";
 import { signOut } from "firebase/auth";
 import { auth } from "utils/firebase";
 
-function UserProfileButton({ isAuth, email }) {
+function UserProfileButton() {
+
+  const { user } = AuthState();
+  const name = user?.displayName;
+
   function handleSignOut() {
     signOut(auth);
   }
 
-  if (!isAuth) {
+  if (!name) {
     return (
       <div>
         <BaseButton classes="text-gray-400 hover:text-white" path="/signup">
@@ -22,7 +27,7 @@ function UserProfileButton({ isAuth, email }) {
 
   return (
     <div className="text-white">
-      {email}
+      {name}
       <button className="text-white" onClick={handleSignOut}>
         LOG OUT
       </button>

@@ -6,7 +6,6 @@ import TheFooter from "../components/TheMain/TheFooter/TheFooter";
 import TheSidebar from "../components/TheMain/TheSidebar/TheSidebar";
 import BaseToast from "../components/Base/BaseToast";
 import BasePopover from "../components/Base/BasePopover/BasePopover";
-import { AuthState } from "Context";
 
 function TheMain() {
   const toastRef = useRef();
@@ -14,10 +13,6 @@ function TheMain() {
 
   const contentWrapperRef = useRef();
   let isScrollingEnabled = true;
-
-  const { user } = AuthState();
-  const email = user?.email;
-  const isAuth = email ? email : undefined;
 
   useEffect(() => {
     const contentWrapper = contentWrapperRef.current;
@@ -50,11 +45,11 @@ function TheMain() {
       <div className="flex flex-grow overflow-auto bg-[#121212]">
         <TheSidebar showPopover={showPopover} />
         <div className="flex-1 overflow-auto" ref={contentWrapperRef}>
-          <TheHeader isAuth={isAuth} email={email} />
+          <TheHeader />
           <TheHome toggleScrolling={toggleScrolling} showToast={showToast} />
         </div>
       </div>
-      <TheFooter isAuth={isAuth} email={email} />
+      <TheFooter />
       <BaseToast ref={toastRef} />
       <BasePopover ref={popoverRef} />
     </>
