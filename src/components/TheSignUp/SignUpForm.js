@@ -68,7 +68,7 @@ function SignUpForm({ handleClick }) {
           </Checkbox>
         </div>
       </form>
-      <SignUpFormFooter handleClick={() => handleClick(email, password)} />
+      <SignUpFormFooter handleClick={() => handleClick(email, password, name)} />
     </div>
   );
 }

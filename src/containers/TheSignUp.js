@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "utils/firebase";
+import { auth, setUser } from "utils/firebase";
 
 import SignUpForm from "components/TheSignUp/SignUpForm";
 import SignUpButton from "components/TheSignUp/SignUpButton";
@@ -10,14 +10,15 @@ import SignUpSeparator from "components/TheSignUp/SignUpSeparator";
 function TheSignUp() {
   const navigate = useNavigate();
 
-  const handleSignUp = async (email, password) => {
+  const handleSignUp = async (email, password, name) => {
     try {
       const result = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
-      console.log(result);
+      const { uid } = result.user;
+      setUser(uid, name, email);
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -45,7 +46,7 @@ function TheSignUp() {
 
       <SignUpSeparator />
 
-      <SignUpForm  handleClick={handleSignUp} />
+      <SignUpForm handleClick={handleSignUp} />
     </div>
   );
 }

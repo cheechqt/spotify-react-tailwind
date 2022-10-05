@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore, setDoc, doc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -10,4 +11,26 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+export async function setUser(
+  userId,
+  name,
+  email,
+  imageUrl = "https://fakeimg.pl/100x100/?text=NO%20WAR&font=lobster"
+) {
+  try {
+    const userRef = await setDoc(doc(db, "users", userId), {
+      userId,
+      name,
+      email,
+      imageUrl,
+    });
+    console.log("Document written with ID: ", userRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+export { auth, db };
