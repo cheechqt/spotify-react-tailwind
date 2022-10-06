@@ -19,7 +19,7 @@ function TheSignUp() {
       );
       await updateProfile(auth.currentUser, {
         displayName: name,
-        photoURL: "https://fakeimg.pl/100x100/?text=NO%20WAR&font=lobster",
+        photoURL: "https://fakeimg.pl/50x50/000000/?text=NO%20WAR",
       });
       const { uid } = result.user;
       setUser(uid, name, email);

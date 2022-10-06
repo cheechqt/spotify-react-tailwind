@@ -3,7 +3,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
-import UserProfileButton from "./UserProfileButton";
+import UserProfileButtons from "./UserProfileButtons";
 
 function TheHeader() {
   return (
@@ -22,7 +22,7 @@ function TheHeader() {
           <ChevronRightIcon className="h-6 w-6" />
         </a>
       </div>
-      <UserProfileButton />
+      <UserProfileButtons />
     </header>
   );
 }

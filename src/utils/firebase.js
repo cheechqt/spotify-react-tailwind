@@ -18,7 +18,7 @@ export async function setUser(
   userId,
   name,
   email,
-  imageUrl = "https://fakeimg.pl/100x100/?text=NO%20WAR&font=lobster"
+  imageUrl = "https://fakeimg.pl/50x50/000000/?text=NO%20WAR"
 ) {
   try {
     await setDoc(doc(db, "users", userId), {
