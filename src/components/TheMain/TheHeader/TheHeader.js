@@ -7,7 +7,7 @@ import UserProfileButtons from "./UserProfileButtons";
 
 function TheHeader() {
   return (
-    <header className="sticky z-10 top-0 bg-[#070707] flex-1 flex items-center justify-between py-[18px] sm:px-[32px] px-[13px]">
+    <header className="sticky z-10 top-0 bg-[#070707] flex-1 flex items-center justify-between  sm:pl-[32px] pl-[13px] pr-1">
       <div className="flex">
         <a
           className="mr-[8px] text-[#969696] p-1 -ml-1.5 inline-block lg:hidden"

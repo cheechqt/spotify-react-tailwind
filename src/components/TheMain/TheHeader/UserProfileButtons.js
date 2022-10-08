@@ -1,31 +1,47 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AuthState } from "Context";
 import BaseButton from "components/Base/BaseButton";
 import UserProfileMenu from "./UserProfileMenu";
+import useClickAway from "hooks/useClickAway/useClickAway";
 
 function UserProfileButtons() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [titleHiddenClasses, setTitleHiddenClasses] =
-    useState("opacity-0 hidden");
+  const [titleClasses, setTitleClasses] = useState("opacity-0 hidden");
+  const [hoverClasses, setHoverClasses] = useState("");
+  const menuRef = useRef();
 
   const { user } = AuthState();
   const name = user?.displayName;
   const userImage = user?.photoURL;
 
-  function handleOpenMenu() {
-    setMenuIsOpen(true);
+  function handleClose() {
+    setMenuIsOpen(false);
+    console.log('closed');
+    
   }
 
-  function handleCloseMenu() {}
+  useClickAway(menuRef, handleClose, () => menuIsOpen);
 
-  function handleShowTitle() {
-    const classes = "";
-    setTitleHiddenClasses(classes);
+
+  useEffect(() => {
+    if (!menuIsOpen) return;
+
+    function handleEsc(e) {
+      if (e.key === "Escape") handleClose();
+    }
+
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  });
+
+  function handleMouseEnter() {
+    setHoverClasses("bg-[#2a2a2a]");
+    setTitleClasses("");
   }
 
-  function handleHideTitle() {
-    const classes = "opacity-0";
-    setTitleHiddenClasses(classes);
+  function handleMouseLeave() {
+    setHoverClasses("");
+    setTitleClasses("opacity-0");
   }
 
   if (!name) {
@@ -46,33 +62,32 @@ function UserProfileButtons() {
       <button className="text-sm font-bold text-center border border-[#727272] border-opacity-70 shrink-0 text-white rounded-[500px] py-2 px-4 m-2 hover:scale-105 hover:border-white">
         Upgrade
       </button>
-      <button
-        className="w-12 h-12 cursor-pointer p-2 gap-2 bg-[#242424] hover:bg-[#2a2a2a] rounded-full cursor-pointer"
-        onClick={handleOpenMenu}
-        onMouseEnter={handleShowTitle}
-        onMouseLeave={handleHideTitle}
-      >
-        <div
-          className="w-8 h-8 cursor-pointer"
-          title={name}
-          onMouseEnter={handleShowTitle}
-          onMouseLeave={handleHideTitle}
+      <div className="relative">
+        <button
+          className={`w-12 h-12 cursor-pointer p-2 gap-2 bg-[#242424] rounded-full ${hoverClasses}`}
         >
-          <img
-            className="w-full h-full rounded-full cursor-pointer"
-            src={userImage}
-            alt={name}
-            onMouseEnter={handleShowTitle}
-            onMouseLeave={handleHideTitle}
-          />
-        </div>
-      </button>
-      {menuIsOpen && <UserProfileMenu />}
+          <figure className="w-8 h-8" title={name}>
+            <img
+              className="w-full h-full rounded-full"
+              src={userImage}
+              alt={name}
+            />
+          </figure>
+        </button>
+        <div
+          className="absolute top-0 left-0 w-full h-full rounded-full cursor-pointer bg-transparent z-10"
+          onClick={() => setMenuIsOpen(true)}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        ></div>
+      </div>
+
+      {menuIsOpen && <UserProfileMenu ref={menuRef} />}
 
       <div
-        className={`bg-[#2a2a2a] px-1.5 py-0.5  rounded absolute transition delay-300  ${titleHiddenClasses}`}
+        className={`absolute top-[54px] r-1 bg-[#2a2a2a] px-1.5 py-0.5  rounded  transition delay-300 ease-in ${titleClasses}`}
       >
-        <p className="text-xs text-white opacity-90 ">{name}</p>
+        <p className="text-sm text-white opacity-90 ">{name}</p>
       </div>
     </div>
   );

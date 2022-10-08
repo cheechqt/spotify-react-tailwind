@@ -17,6 +17,7 @@ function BasePopover(_, ref) {
   function shoudHide(e) {
     return !target?.parentNode.contains(e.target);
   }
+  
   useImperativeHandle(ref, () => ({ show }));
 
   function show(title, description, nextTarget, offset) {
