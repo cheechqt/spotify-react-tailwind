@@ -1,15 +1,11 @@
-import { useState } from "react";
+import TheFooterPlaylistRightSoundLevel from "./TheFooterPlayerRightSoundLevel";
 
 import {
-  SpeakerWaveIcon,
-  SpeakerXMarkIcon,
   ComputerDesktopIcon,
   QueueListIcon,
 } from "@heroicons/react/24/outline";
 
-function TheFooterPlayerRight() {
-  const [isMuted, setIsMuted] = useState(false);
-
+function TheFooterPlayerRight({ volume, setVolume }) {
   return (
     <div className="flex flex-row">
       <button className="w-8 h-8">
@@ -18,19 +14,7 @@ function TheFooterPlayerRight() {
       <button className="w-8 h-8">
         <ComputerDesktopIcon className="h-5 w-5" />
       </button>
-      <button className="w-8 h-8">
-        {isMuted ? (
-          <SpeakerXMarkIcon
-            className="h-5 w-5"
-            onClick={() => setIsMuted(true)}
-          />
-        ) : (
-          <SpeakerWaveIcon
-            className="h-5 w-5"
-            onClick={() => setIsMuted(false)}
-          />
-        )}
-      </button>
+      <TheFooterPlaylistRightSoundLevel volume={volume} setVolume={setVolume} />
     </div>
   );
 }
