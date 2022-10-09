@@ -22,7 +22,7 @@ function TheFooter() {
     );
   }
 
-  return <TheFooterPlayer name={name} />;
+  return <TheFooterPlayer/>;
 }
 
 export default TheFooter;

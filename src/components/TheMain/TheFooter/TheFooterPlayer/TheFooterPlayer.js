@@ -1,7 +1,9 @@
-function TheFooterPlayer({name}) {
+import TheFooterPlayerRight from "./TheFooterPlayerRight";
+
+function TheFooterPlayer() {
   return (
-    <div className="bg-gradient-to-r from-[#af2896] to-[#509bf5] text-white py-4 px-8 justify-between items-center flex flex-wrap gap-y-2 gap-x-6">
-      HELLO {name}
+    <div className="py-4 px-8 justify-between items-center flex flex-wrap gap-y-2 gap-x-6">
+      <TheFooterPlayerRight/>
     </div>
   );
 }
