@@ -1,4 +1,4 @@
-const TheFooterSignupText = () => {
+const TheFooterNotSignedUp = () => {
   return (
     <div className="text-start">
       <p className="text-xs uppercase mb-1 tracking-wider">
@@ -12,4 +12,4 @@ const TheFooterSignupText = () => {
   );
 };
 
-export default TheFooterSignupText;
+export default TheFooterNotSignedUp;

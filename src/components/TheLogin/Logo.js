@@ -1,6 +1,6 @@
 import BaseLogo from "components/Base/BaseLogo";
 
-function LoginLogo() {
+function Logo() {
   return (
     <div className="mb-3 p-3 w-full text-center after:border-b-0  after:border after:border-[#dadadb] after:block">
       <BaseLogo
@@ -11,4 +11,4 @@ function LoginLogo() {
   );
 }
 
-export default LoginLogo;
+export default Logo;

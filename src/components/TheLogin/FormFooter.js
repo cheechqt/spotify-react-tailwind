@@ -1,7 +1,7 @@
 import BaseButton from "components/Base/BaseButton";
 import Checkbox from "components/Base/BaseCheckbox";
 
-function LoginFormFooter({ handleClick }) {
+function FormFooter({ handleClick }) {
   return (
     <div className="flex flex-col md:flex-row justify-between items-start mt-4  md:mb-[20px] mb-0 w-full">
       <Checkbox classes="pb-5">Remember me</Checkbox>
@@ -16,4 +16,4 @@ function LoginFormFooter({ handleClick }) {
   );
 }
 
-export default LoginFormFooter;
+export default FormFooter;

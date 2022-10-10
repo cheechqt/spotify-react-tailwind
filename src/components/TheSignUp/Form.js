@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import Input from "components/Base/BaseAuthInput";
 import Checkbox from "components/Base/BaseCheckbox";
-import SignUpFieldset from "./SignUpFieldset";
-import SignUpFormFooter from "./SignUpFormFooter";
+import Fieldset from "./Fieldset";
+import FormFooter from "./FormFooter";
 
-function SignUpForm({ handleClick }) {
+function Form({ handleClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmEmail, setConfirmEmail] = useState("");
@@ -54,7 +54,7 @@ function SignUpForm({ handleClick }) {
           />
         </div>
 
-        <SignUpFieldset />
+        <Fieldset />
 
         <div className="pb-6">
           <Checkbox>
@@ -68,9 +68,9 @@ function SignUpForm({ handleClick }) {
           </Checkbox>
         </div>
       </form>
-      <SignUpFormFooter handleClick={() => handleClick(email, password, name)} />
+      <FormFooter handleClick={() => handleClick(email, password, name)} />
     </div>
   );
 }
 
-export default SignUpForm;
+export default Form;

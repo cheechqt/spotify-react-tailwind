@@ -1,6 +1,6 @@
-import TheFooter from "./TheFooter/TheFooter";
+import Footer from "./Footer/Footer";
 import TheNav from "components/TheMain/TheSidebar/TheNav/TheNav";
-import TheSidebarOverlay from "components/TheMain/TheSidebar/TheSidebarOverlay";
+import Overlay from "components/TheMain/TheSidebar/Overlay";
 import BaseLogo from "components/Base/BaseLogo";
 
 function TheSidebar({ showPopover }) {
@@ -12,9 +12,9 @@ function TheSidebar({ showPopover }) {
       >
         <BaseLogo />
         <TheNav showPopover={showPopover} />
-        <TheFooter />
+        <Footer />
       </aside>
-      <TheSidebarOverlay />
+      <Overlay />
     </>
   );
 }

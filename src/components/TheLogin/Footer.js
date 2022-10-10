@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function LoginFooter() {
+function Footer() {
   return (
     <div className=" w-full">
       <hr className="border-[1px] my-5"></hr>
@@ -17,4 +17,4 @@ function LoginFooter() {
   );
 }
 
-export default LoginFooter;
+export default Footer;

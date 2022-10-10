@@ -2,11 +2,11 @@ import { useState } from "react";
 import { SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline";
 import RangeSlider from "./RangeSlider";
 
-function TheFooterPlaylistRightSoundLevel({ volume, setVolume }) {
+function SoundLevel({ volume, setVolume }) {
   const [lastVolume, setLastVolume] = useState(1);
 
   const soundBtn = () => {
-    if (volume == 0) {
+    if (volume === 0) {
       setVolume(lastVolume);
     } else {
       setLastVolume(volume);
@@ -24,15 +24,15 @@ function TheFooterPlaylistRightSoundLevel({ volume, setVolume }) {
             onClick={() => setVolume(lastVolume)}
           />
         )}
-        <RangeSlider
-          minvalue={0}
-          maxvalue={1}
-          value={volume}
-          handleChange={setVolume}
-        />
       </div>
+      <RangeSlider
+        minvalue={0}
+        maxvalue={1}
+        value={volume}
+        handleChange={setVolume}
+      />
     </button>
   );
 }
 
-export default TheFooterPlaylistRightSoundLevel;
+export default SoundLevel;

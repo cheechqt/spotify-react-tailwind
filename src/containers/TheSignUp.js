@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, setUser } from "utils/firebase";
 
-import SignUpForm from "components/TheSignUp/SignUpForm";
-import SignUpButton from "components/TheSignUp/SignUpButton";
-import SignUpLogo from "components/TheSignUp/SignUpLogo";
-import SignUpSeparator from "components/TheSignUp/SignUpSeparator";
+import Form from "components/TheSignUp/Form";
+import Button from "components/TheSignUp/Button";
+import Logo from "components/TheSignUp/Logo";
+import Separator from "components/TheSignUp/Separator";
 
 function TheSignUp() {
   const navigate = useNavigate();
@@ -31,26 +31,26 @@ function TheSignUp() {
 
   return (
     <div className="max-w-[450px] w-full mx-auto pb-[130px] px-[24px] md:px-0">
-      <SignUpLogo />
+      <Logo />
 
       <div className="flex flex-col items-center">
-        <SignUpButton
+        <Button
           icon="facebook"
           bgAndTextClasses="bg-[#3b5999] text-[#fff]"
         >
           Sign up with Facebook
-        </SignUpButton>
-        <SignUpButton
+        </Button>
+        <Button
           icon="google"
           bgAndTextClasses="bg-[#fff] text-[#535353] border-2 border-[#191919]"
         >
           Sign up with Google
-        </SignUpButton>
+        </Button>
       </div>
 
-      <SignUpSeparator />
+      <Separator />
 
-      <SignUpForm handleClick={handleSignUp} />
+      <Form handleClick={handleSignUp} />
     </div>
   );
 }

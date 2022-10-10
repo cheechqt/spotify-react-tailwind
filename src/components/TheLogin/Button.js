@@ -5,7 +5,7 @@ import googleIcon from "components/img/google.svg";
 import facebookIcon from "components/img/facebook-squared.svg";
 import appleIcon from "components/img/apple.svg";
 
-function LoginButton({
+function Button({
   children: label,
   bgAndTextClasses = "text-[#ffffff] bg-[#fff]",
   classes,
@@ -55,4 +55,4 @@ function LoginButton({
   );
 }
 // #3b5999
-export default LoginButton;
+export default Button;

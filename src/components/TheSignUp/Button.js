@@ -1,7 +1,7 @@
 import googleIcon from "components/img/google.svg";
 import facebookIcon from "components/img/facebook.svg";
 
-function SignUpButton({
+function Button({
   children: label,
   bgAndTextClasses = "text-[#ffffff] bg-[#fff]",
   classes,
@@ -25,4 +25,4 @@ function SignUpButton({
     </button>
   );
 }
-export default SignUpButton;
+export default Button;

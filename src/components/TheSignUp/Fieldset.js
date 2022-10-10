@@ -1,4 +1,4 @@
-function SignUpFieldset() {
+function Fieldset() {
   return (
     <fieldset role="radiogroup" className="pb-6">
       <legend className="pb-2 font-bold text-sm">What's your gender?</legend>
@@ -74,4 +74,4 @@ function SignUpFieldset() {
   );
 }
 
-export default SignUpFieldset;
+export default Fieldset;

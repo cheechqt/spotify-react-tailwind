@@ -1,4 +1,4 @@
-import FooterListItem from "./FooterListItem";
+import FooterListItem from "./ListItem";
 
 const TheFooterList = () => {
   return (

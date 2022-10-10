@@ -1,7 +1,7 @@
 import BaseButton from "components/Base/BaseButton";
 import { Link } from "react-router-dom";
 
-function SignUpFormFooter({ handleClick }) {
+function FormFooter({ handleClick }) {
   return (
     <div className="flex flex-col justify-center items-center text-center">
       <p className="text-xs pb-3">
@@ -47,4 +47,4 @@ function SignUpFormFooter({ handleClick }) {
   );
 }
 
-export default SignUpFormFooter;
+export default FormFooter;

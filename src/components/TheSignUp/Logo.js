@@ -1,6 +1,6 @@
 import BaseLogo from "components/Base/BaseLogo";
 
-function SignUpLogo() {
+function Logo() {
   return (
     <div className="pt-[40px] pb-[32px] flex flex-col justify-center items-center">
       <BaseLogo
@@ -14,4 +14,4 @@ function SignUpLogo() {
   );
 }
 
-export default SignUpLogo;
+export default Logo;

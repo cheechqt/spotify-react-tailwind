@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import Input from "components/Base/BaseAuthInput";
-import LoginFormFooter from "./LoginFormFooter";
+import FormFooter from "./FormFooter";
 
-function LoginForm({ handleClick }) {
+function Form ({ handleClick }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,9 +34,9 @@ function LoginForm({ handleClick }) {
         Forgot your password?
       </a>
 
-      <LoginFormFooter handleClick={() => handleClick(email, password)} />
+      <FormFooter handleClick={() => handleClick(email, password)} />
     </div>
   );
 }
 
-export default LoginForm;
+export default Form;

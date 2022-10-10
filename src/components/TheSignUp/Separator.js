@@ -1,4 +1,4 @@
-function SignUpSeparator() {
+function Separator() {
   return (
     <div className="flex flex-row items-center w-[85%] mt-3 mx-auto mb-4 mt-0">
       <hr className="w-[42%] ml-[12px] mr-[20px] border-t-1 border-[#eeeeef] border"></hr>
@@ -8,4 +8,4 @@ function SignUpSeparator() {
   );
 }
 
-export default SignUpSeparator;
+export default Separator;

@@ -1,11 +1,11 @@
-import TheFooterPlaylistRightSoundLevel from "./TheFooterPlayerRightSoundLevel";
+import SoundLevel from "./SoundLevel";
 
 import {
   ComputerDesktopIcon,
   QueueListIcon,
 } from "@heroicons/react/24/outline";
 
-function TheFooterPlayerRight({ volume, setVolume }) {
+function PlayerRight({ volume, setVolume }) {
   return (
     <div className="flex flex-row">
       <button className="w-8 h-8">
@@ -14,9 +14,9 @@ function TheFooterPlayerRight({ volume, setVolume }) {
       <button className="w-8 h-8">
         <ComputerDesktopIcon className="h-5 w-5" />
       </button>
-      <TheFooterPlaylistRightSoundLevel volume={volume} setVolume={setVolume} />
+      <SoundLevel volume={volume} setVolume={setVolume} />
     </div>
   );
 }
 
-export default TheFooterPlayerRight;
+export default PlayerRight;
