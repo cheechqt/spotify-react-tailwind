@@ -3,7 +3,7 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   ArrowPathRoundedSquareIcon,
-} from "@heroicons/react/24/outline";
+} from "@heroicons/react/24/solid";
 
 import { PLAYLIST } from "data";
 import PlayButton from "./PlayButton";
@@ -41,21 +41,21 @@ function ControlBox(props) {
 
   return (
     <div className="w-[224px] flex items-center justify-between mb-3">
-      <ArrowsRightLeftIcon className="h-5 w-5" />
+      <ArrowsRightLeftIcon className="h-5 w-5 text-white" />
       <button
         className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center"
         onClick={decreaseIndex}
       >
-        <ChevronLeftIcon className="h-5 w-5" />
+        <ChevronLeftIcon className="h-5 w-5 text-white" />
       </button>
       <PlayButton isthisplay={true} />
       <button
         className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center"
         onClick={increaseIndex}
       >
-        <ChevronRightIcon className="h-5 w-5" />
+        <ChevronRightIcon className="h-5 w-5 text-white" />
       </button>
-      <ArrowPathRoundedSquareIcon className="h-5 w-5" />
+      <ArrowPathRoundedSquareIcon className="h-5 w-5 text-white" />
     </div>
   );
 }

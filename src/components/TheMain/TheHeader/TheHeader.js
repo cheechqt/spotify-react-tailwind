@@ -1,4 +1,4 @@
-import { AuthState } from "Context";
+import { SpoityState } from "Context";
 import {
   Bars3Icon,
   ChevronLeftIcon,
@@ -7,7 +7,7 @@ import {
 import UserProfileButtons from "./UserProfileButtons";
 
 function TheHeader() {
-  const { user } = AuthState();
+  const { user } = SpoityState();
   const headerClasses = user ? "" : "py-4";
   
   return (

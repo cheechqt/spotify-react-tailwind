@@ -20,13 +20,13 @@ function PlayerMid(props) {
         duration={duration}
         handleTrackClick={handleTrackClick}
       />
-      <Audio
+      {/* <Audio
         ref={audioRef}
         handleDuration={setDuration}
         handleCurrentTime={setCurrentTime}
         trackData={props.trackData}
         isPlaying={props.isPlaying}
-      />
+      /> */}
     </div>
   );
 }

@@ -2,10 +2,10 @@ import BaseButton from "../../Base/BaseButton";
 import TheFooterNotSignedUp from "./TheFooterNotSignedUp";
 import TheFooterPlayer from "./TheFooterPlayer/Player";
 import { Link } from "react-router-dom";
-import { AuthState } from "Context";
+import { SpoityState } from "Context";
 
 function TheFooter() {
-    const { user } = AuthState();
+    const { user } = SpoityState();
     const name = user?.displayName;
 
   if (!name) {

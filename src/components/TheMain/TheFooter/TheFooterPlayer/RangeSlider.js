@@ -34,7 +34,7 @@ function RangeSlider({
         ref={inputRef}
         type="range"
         onChange={handleInputChange}
-        className={`bg-[#535353] h-1 overflow-hidden w-auto rounded-sm`}
+        className={`bg-[#535353] h-2 overflow-hidden w-auto rounded-sm`}
         min={minvalue}
         max={maxvalue}
         step="0.01"

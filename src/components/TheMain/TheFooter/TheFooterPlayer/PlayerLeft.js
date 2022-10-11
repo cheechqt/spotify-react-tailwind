@@ -7,7 +7,7 @@ function PlayerLeft(trackData) {
     <div className="flex items-center justify-center">
       <ImgBox trackData={trackData} />
       <SongDetails trackData={trackData} />
-      <HeartIcon className="h-5 w-5" />
+      <HeartIcon className="h-5 w-5 text-white" />
     </div>
   );
 }
@@ -15,7 +15,7 @@ function PlayerLeft(trackData) {
 function ImgBox({ trackData }) {
   return (
     <div className="w-[56px] h-[56px]">
-      <img className="w-full h-full" src={trackData.trackImg} alt="Gavurlar" />
+      <img className="w-full h-full" src={trackData.trackImg} alt="Song Image" />
     </div>
   );
 }
