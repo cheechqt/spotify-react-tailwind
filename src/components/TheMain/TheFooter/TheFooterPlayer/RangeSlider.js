@@ -1,6 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 
-function RangeSlider({ value, minvalue, maxvalue, handleChange }) {
+function RangeSlider({
+  value,
+  minvalue,
+  maxvalue,
+  handleChange,
+  inputClasses = "",
+}) {
   const inputRef = useRef(null);
   const inputRefWidth = useRef(null);
   const [decimalValue, setDecimalValue] = useState();
@@ -28,7 +34,7 @@ function RangeSlider({ value, minvalue, maxvalue, handleChange }) {
         ref={inputRef}
         type="range"
         onChange={handleInputChange}
-        className="bg-[#535353] h-1 overflow-hidden w-auto rounded-sm"
+        className={`bg-[#535353] h-1 overflow-hidden w-auto rounded-sm`}
         min={minvalue}
         max={maxvalue}
         step="0.01"

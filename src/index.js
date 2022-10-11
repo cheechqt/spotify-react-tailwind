@@ -4,16 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./containers/App";
 import "./utils/firebase";
 import "./index.css";
-import AuthContext from "Context";
+import SpotifyContext from "Context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <BrowserRouter basename="/spotify-react-tailwind/"> */}
     <BrowserRouter>
-      <AuthContext>
+      <SpotifyContext>
         <App />
-      </AuthContext>
+      </SpotifyContext>
     </BrowserRouter>
   </React.StrictMode>
 );

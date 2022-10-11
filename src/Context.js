@@ -2,32 +2,31 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
 
-const Auth = createContext();
+const Spotify = createContext();
 
-const AuthContext = ({ children }) => {
+const SpotifyContext = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) setUser(user);
       else setUser(null);
-      console.log(user);
     });
   }, []);
 
   return (
-    <Auth.Provider
+    <Spotify.Provider
       value={{
         user,
       }}
     >
       {children}
-    </Auth.Provider>
+    </Spotify.Provider>
   );
 };
 
-export default AuthContext;
+export default SpotifyContext;
 
 export const AuthState = () => {
-  return useContext(Auth);
+  return useContext(Spotify);
 };
