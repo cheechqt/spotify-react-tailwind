@@ -1,4 +1,4 @@
-import { SpoityState } from "Context";
+import { SpotifyState } from "Context";
 import {
   Bars3Icon,
   ChevronLeftIcon,
@@ -7,7 +7,7 @@ import {
 import UserProfileButtons from "./UserProfileButtons";
 
 function TheHeader() {
-  const { user } = SpoityState();
+  const { user } = SpotifyState();
   const headerClasses = user ? "" : "py-4";
   
   return (

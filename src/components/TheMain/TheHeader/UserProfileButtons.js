@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { SpoityState } from "Context";
+import { SpotifyState } from "Context";
 import BaseButton from "components/Base/BaseButton";
 import UserProfileMenu from "./UserProfileMenu";
 import useClickAway from "hooks/useClickAway/useClickAway";
@@ -10,7 +10,7 @@ function UserProfileButtons() {
   const [hoverClasses, setHoverClasses] = useState("");
   const menuRef = useRef();
 
-  const { user } = SpoityState();
+  const { user } = SpotifyState();
   const name = user?.displayName;
   const userImage = user?.photoURL;
 

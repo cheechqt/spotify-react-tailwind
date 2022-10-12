@@ -1,21 +1,20 @@
-import {
-  HeartIcon,
-} from "@heroicons/react/24/outline";
+import { HeartIcon } from "@heroicons/react/24/outline";
 
-function PlayerLeft(trackData) {
+function PlayerLeft({trackData}) {
+  
   return (
     <div className="flex items-center justify-center">
-      <ImgBox trackData={trackData} />
+      <ImgBox imgSrc={trackData.trackImg} />
       <SongDetails trackData={trackData} />
       <HeartIcon className="h-5 w-5 text-white" />
     </div>
   );
 }
 
-function ImgBox({ trackData }) {
+function ImgBox({ imgSrc }) {
   return (
     <div className="w-[56px] h-[56px]">
-      <img className="w-full h-full" src={trackData.trackImg} alt="Song Image" />
+      <img src={imgSrc} className="w-full h-full" alt="Song" />
     </div>
   );
 }
@@ -32,11 +31,5 @@ function SongDetails({ trackData }) {
     </div>
   );
 }
-
-const mapStateToProps = (state) => {
-  return {
-    trackData: state.trackData,
-  };
-};
 
 export default PlayerLeft;

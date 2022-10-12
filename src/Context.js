@@ -7,30 +7,33 @@ const Spotify = createContext();
 
 const SpotifyContext = ({ children }) => {
   const [user, setUser] = useState(null);
-  
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackData, setTrackData] = useState({
     trackKey: [0, 0],
-    track: `${PLAYLIST[0].playlistData[0].link}`,
-    trackName: `${PLAYLIST[0].playlistData[0].songName}`,
-    trackImg: `${PLAYLIST[0].playlistData[0].songimg}`,
-    trackArtist: `${PLAYLIST[0].playlistData[0].songArtist}`,
+    track: PLAYLIST[0].playlistData[0].link,
+    trackName: PLAYLIST[0].playlistData[0].songName,
+    trackImg: PLAYLIST[0].playlistData[0].songimg,
+    trackArtist: PLAYLIST[0].playlistData[0].songArtist,
   });
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) setUser(user);
-      else setUser(null);
+      if (user) {
+        setUser(user);
+      } else setUser(null);
     });
   }, []);
 
   function setCurrentTrackData(playlistIndex, trackIndex = 0) {
+    console.log(PLAYLIST[playlistIndex].playlistData[trackIndex].link);
+    
     setTrackData({
       trackKey: [playlistIndex, trackIndex],
-      track: `${PLAYLIST[playlistIndex].playlistData[trackIndex].link}`,
-      trackName: `${PLAYLIST[playlistIndex].playlistData[trackIndex].songName}`,
-      trackImg: `${PLAYLIST[playlistIndex].playlistData[trackIndex].songimg}`,
-      trackArtist: `${PLAYLIST[playlistIndex].playlistData[trackIndex].songArtist}`,
+      track: PLAYLIST[playlistIndex].playlistData[trackIndex].link,
+      trackName: PLAYLIST[playlistIndex].playlistData[trackIndex].songName,
+      trackImg: PLAYLIST[playlistIndex].playlistData[trackIndex].songimg,
+      trackArtist: PLAYLIST[playlistIndex].playlistData[trackIndex].songArtist,
     });
   }
 
@@ -51,6 +54,6 @@ const SpotifyContext = ({ children }) => {
 
 export default SpotifyContext;
 
-export const SpoityState = () => {
+export const SpotifyState = () => {
   return useContext(Spotify);
 };

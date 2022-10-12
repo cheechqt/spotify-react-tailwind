@@ -1,12 +1,15 @@
 import { useRef, useState } from "react";
+import { SpotifyState } from "Context";
 import Audio from "../Audio";
 import ControlBox from "./ControlBox";
 import ProgressBar from "./ProgressBar";
 
-function PlayerMid(props) {
+function PlayerMid({ trackData }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
+
+  const { isPlaying } = SpotifyState();
 
   const handleTrackClick = (position) => {
     audioRef.current.currentTime = position;
@@ -14,19 +17,19 @@ function PlayerMid(props) {
 
   return (
     <div className=" flex flex-col items-center">
-      <ControlBox />
+      <ControlBox trackData={trackData} />
       <ProgressBar
         currentTime={currentTime}
         duration={duration}
         handleTrackClick={handleTrackClick}
       />
-      {/* <Audio
+      <Audio
         ref={audioRef}
         handleDuration={setDuration}
         handleCurrentTime={setCurrentTime}
-        trackData={props.trackData}
-        isPlaying={props.isPlaying}
-      /> */}
+        trackData={trackData}
+        isPlaying={isPlaying}
+      />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 export const PLAYLIST = [
   {
     index: "0",
-    type: "albüm",
+    type: "album",
     title: "Lafıma Gücenme",
     link: "lafimagucenme",
     imgUrl: "https://i.scdn.co/image/ab67616d0000b2731d26b3e7ea803059a6e4ffea",
@@ -261,7 +261,7 @@ export const PLAYLIST = [
   },
   {
     index: "5",
-    type: "albüm",
+    type: "album",
     title: "Ben",
     link: "ben",
     imgUrl: "https://i.scdn.co/image/ab67616d0000b273e0cfce61b45ba6064a07fb0e",

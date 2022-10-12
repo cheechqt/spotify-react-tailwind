@@ -2,11 +2,13 @@ import BaseButton from "../../Base/BaseButton";
 import TheFooterNotSignedUp from "./TheFooterNotSignedUp";
 import TheFooterPlayer from "./TheFooterPlayer/Player";
 import { Link } from "react-router-dom";
-import { SpoityState } from "Context";
+import { SpotifyState } from "Context";
 
 function TheFooter() {
-    const { user } = SpoityState();
-    const name = user?.displayName;
+  const { user } = SpotifyState();
+  console.log(user);
+
+  const name = user?.displayName;
 
   if (!name) {
     return (
@@ -22,7 +24,7 @@ function TheFooter() {
     );
   }
 
-  return <TheFooterPlayer/>;
+  return <TheFooterPlayer />;
 }
 
 export default TheFooter;

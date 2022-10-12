@@ -8,10 +8,11 @@ import PlaylistTitle from "./PlaylistTitle";
 import PlaylistContextMenu from "./PlaylistContextMenu/PlaylistContextMenu";
 
 const Playlist = ({
+  index: playlistIndex,
   classes,
-  coverUrl,
+  imgUrl,
   title,
-  description,
+  artist,
   toggleScrolling,
   showToast,
 }) => {
@@ -88,13 +89,14 @@ const Playlist = ({
       onContextMenu={menu.handleOpen}
       onTouchStart={menu.handleOpen}
       onClick={(e) => e.preventDefault()}
+      data-index={playlistIndex}
     >
       <div className="relative">
-        <PlaylistCover url={coverUrl} />
+        <PlaylistCover url={imgUrl} />
         <PlaylistButtonPlay />
       </div>
       <PlaylistTitle title={title} />
-      <PlaylistDescription description={description} />
+      <PlaylistDescription description={artist} />
       {menu.isOpen && (
         <PlaylistContextMenu
           menuItems={menu.items}
