@@ -6,8 +6,6 @@ import { SpotifyState } from "Context";
 
 function TheFooter() {
   const { user } = SpotifyState();
-  console.log(user);
-
   const name = user?.displayName;
 
   if (!name) {

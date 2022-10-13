@@ -21,7 +21,7 @@ function ImgBox({ imgSrc }) {
 
 function SongDetails({ trackData }) {
   return (
-    <div className="mx-4">
+    <div className="mx-4 text-white">
       <p>{trackData.trackName}</p>
       <p className="m-0">
         <small className="text-[#b3b3b3] text-[11px]">

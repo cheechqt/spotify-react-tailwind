@@ -16,7 +16,7 @@ function PlayerMid({ trackData }) {
   };
 
   return (
-    <div className=" flex flex-col items-center">
+    <div className=" flex flex-col items-center flex-1">
       <ControlBox trackData={trackData} />
       <ProgressBar
         currentTime={currentTime}

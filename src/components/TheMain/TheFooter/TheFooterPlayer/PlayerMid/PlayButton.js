@@ -12,7 +12,7 @@ function PlayButton() {
       role="button"
       onClick={() => setIsPlaying(!isPlaying)}
     >
-      {isPlaying ? <PlayIcon /> : <PauseIcon />}
+      {isPlaying ? <PauseIcon /> : <PlayIcon />}
     </div>
   );
 }

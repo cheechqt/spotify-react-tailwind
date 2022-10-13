@@ -2,7 +2,6 @@ import { SpotifyState } from "Context";
 import Playlist from "./Playlist/Playlist";
 import { PLAYLIST } from "data";
 
-
 // const playlists = [
 //   {
 //     classes: "",
@@ -60,12 +59,10 @@ import { PLAYLIST } from "data";
 //   },
 // ];
 
-
-
 function TheHome({ toggleScrolling, showToast }) {
-      const { user } = SpotifyState();
+  const { user } = SpotifyState();
   const name = user?.displayName;
-  
+
   return (
     <main className="text-white relative">
       <div className="h-[275px] bg-gradient-to-b from-[#1f1f1f] to-[#121212] absolute w-full"></div>
@@ -86,8 +83,6 @@ function TheHome({ toggleScrolling, showToast }) {
           </div>
           <div className="grid sm:grid-cols-playlists-mobile md:grid-cols-playlists-tablet lg:grid-cols-playlists-desktop gap-5">
             {PLAYLIST.map((playlist) => {
-              console.log(playlist);
-              
               return (
                 <Playlist
                   {...playlist}

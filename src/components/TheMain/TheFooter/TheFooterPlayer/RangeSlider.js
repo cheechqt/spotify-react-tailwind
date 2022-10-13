@@ -29,12 +29,12 @@ function RangeSlider({
   };
 
   return (
-    <div className="flex items-center relative">
+    <div className="flex items-center relative w-full">
       <input
         ref={inputRef}
         type="range"
         onChange={handleInputChange}
-        className={`bg-[#535353] h-2 overflow-hidden w-auto rounded-sm`}
+        className="bg-[#4d4d4d] h-1.5 appearance-none overflow-hidden rounded- w-full mx-auto"
         min={minvalue}
         max={maxvalue}
         step="0.01"

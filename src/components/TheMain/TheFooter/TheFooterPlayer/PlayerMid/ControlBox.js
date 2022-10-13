@@ -11,7 +11,6 @@ import PlayButton from "./PlayButton";
 
 function ControlBox({ trackData }) {
   const { setCurrentTrackData } = SpotifyState();
-  console.log(parseInt(trackData.trackKey[1]) + 1);
 
   function decreaseIndex() {
     if (trackData.trackKey[1] === 0) {
