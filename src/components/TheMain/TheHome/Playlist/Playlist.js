@@ -8,7 +8,6 @@ import PlaylistTitle from "./PlaylistTitle";
 import PlaylistContextMenu from "./PlaylistContextMenu/PlaylistContextMenu";
 
 const Playlist = ({
-  index: playlistIndex,
   classes,
   imgUrl,
   title,
@@ -89,7 +88,6 @@ const Playlist = ({
       onContextMenu={menu.handleOpen}
       onTouchStart={menu.handleOpen}
       onClick={(e) => e.preventDefault()}
-      data-index={playlistIndex}
     >
       <div className="relative">
         <PlaylistCover url={imgUrl} />

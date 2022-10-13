@@ -9,15 +9,13 @@ function PlayerMid({ trackData }) {
   const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
 
-  const { isPlaying } = SpotifyState();
-
   const handleTrackClick = (position) => {
     audioRef.current.currentTime = position;
   };
 
   return (
-    <div className=" flex flex-col items-center flex-1">
-      <ControlBox trackData={trackData} />
+    <div className=" flex flex-col items-center">
+      <ControlBox trackData={trackData} audioRef={audioRef} />
       <ProgressBar
         currentTime={currentTime}
         duration={duration}
@@ -28,7 +26,6 @@ function PlayerMid({ trackData }) {
         handleDuration={setDuration}
         handleCurrentTime={setCurrentTime}
         trackData={trackData}
-        isPlaying={isPlaying}
       />
     </div>
   );

@@ -3,7 +3,7 @@ import { HeartIcon } from "@heroicons/react/24/outline";
 function PlayerLeft({trackData}) {
   
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-start">
       <ImgBox imgSrc={trackData.trackImg} />
       <SongDetails trackData={trackData} />
       <HeartIcon className="h-5 w-5 text-white" />

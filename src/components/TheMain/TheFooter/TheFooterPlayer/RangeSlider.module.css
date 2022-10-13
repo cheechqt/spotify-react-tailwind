@@ -1,0 +1,73 @@
+.progressBar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.rangeSlider {
+  -webkit-appearance: none;
+  background-color: #535353;
+  height: 4px;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 2px;
+}
+.spanThumb {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 50px;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.rangeSlider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 4px;
+}
+.rangeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  position: relative;
+  z-index: 9;
+  background: #b3b3b3;
+  border-radius: 50%;
+  box-shadow: -410px 0 0 408px #b3b3b3;
+  cursor: pointer;
+  height: 4px;
+  width: 4px;
+  border: 0;
+}
+.rangeSlider::-moz-range-thumb {
+  background: #b3b3b3;
+  border-radius: 50%;
+  box-shadow: -410px 0 0 408px #b3b3b3;
+  cursor: pointer;
+  height: 4px;
+  width: 4px;
+  border: 0;
+}
+.rangeSlider::-moz-range-track {
+  background-color: #535353;
+}
+.rangeSlider::-moz-range-progress {
+  background-color: #b3b3b3;
+  height: 4px;
+}
+.rangeSlider::-ms-fill-upper {
+  background-color: #535353;
+}
+.rangeSlider::-ms-fill-lower {
+  background-color: #b3b3b3;
+}
+.progressBar:hover .rangeSlider::-webkit-slider-thumb {
+  background: #1db954;
+  box-shadow: -410px 0 0 408px #1db954;
+}
+.progressBar:hover .rangeSlider::-moz-range-thumb {
+  background: #1db954;
+  box-shadow: -410px 0 0 408px #1db954;
+}
+.progressBar:hover span {
+  background: #1db954 !important;
+  opacity: 1 !important;
+}

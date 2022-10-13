@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from "react";
+import styles from "./RangeSlider.module.css"
 
 function RangeSlider({
   value,
   minvalue,
   maxvalue,
   handleChange,
-  inputClasses = "",
 }) {
   const inputRef = useRef(null);
   const inputRefWidth = useRef(null);
@@ -29,19 +29,19 @@ function RangeSlider({
   };
 
   return (
-    <div className="flex items-center relative w-full">
+    <div className={styles.progressBar}>
       <input
         ref={inputRef}
         type="range"
         onChange={handleInputChange}
-        className="bg-[#4d4d4d] h-1.5 appearance-none overflow-hidden rounded- w-full mx-auto"
+        className={styles.rangeSlider}
         min={minvalue}
         max={maxvalue}
         step="0.01"
         value={value}
       />
       <span
-        className="w-[10px] h-[10px] absolute rounded-[50px] z-10 opacity-0 pointer-events-none"
+        className={styles.spanThumb}
         style={{ left: `${decimalValue * inputRefWidth.current - 3}px` }}
       ></span>
     </div>

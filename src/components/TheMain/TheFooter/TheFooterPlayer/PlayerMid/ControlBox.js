@@ -9,7 +9,7 @@ import { SpotifyState } from "Context";
 import { PLAYLIST } from "data";
 import PlayButton from "./PlayButton";
 
-function ControlBox({ trackData }) {
+function ControlBox({ trackData, audioRef }) {
   const { setCurrentTrackData } = SpotifyState();
 
   function decreaseIndex() {
@@ -41,7 +41,7 @@ function ControlBox({ trackData }) {
       >
         <ChevronLeftIcon className="h-5 w-5 text-white" />
       </button>
-      <PlayButton />
+      <PlayButton audioRef={audioRef} />
       <button
         className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center"
         onClick={increaseIndex}

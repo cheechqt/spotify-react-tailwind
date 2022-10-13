@@ -12,7 +12,7 @@ function Player() {
   
 
   return (
-    <footer className="py-4 px-8 justify-between items-center flex-row flex gap-y-2 gap-x-6 bg-black">
+    <footer className="grid grid-cols-footer py-4 px-8 gap-y-2 gap-x-6 bg-black">
       <PlayerLeft trackData={trackData} />
       <PlayerMid trackData={trackData} />
       <PlayerRight volume={volume} setVolume={setVolume} />
