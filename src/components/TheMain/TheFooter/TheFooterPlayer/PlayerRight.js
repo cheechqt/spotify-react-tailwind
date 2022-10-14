@@ -5,16 +5,16 @@ import {
   QueueListIcon,
 } from "@heroicons/react/24/outline";
 
-function PlayerRight({ volume, setVolume }) {
+function PlayerRight({audioRef, volume, setVolume}) {
   return (
-    <div className="flex flex-row justify-end">
+    <div className="flex justify-end items-center -translate-x-[127px]">
       <button className="w-8 h-8">
         <QueueListIcon className="h-5 w-5 text-white" />
       </button>
       <button className="w-8 h-8">
         <ComputerDesktopIcon className="h-5 w-5 text-white" />
       </button>
-      <SoundLevel volume={volume} setVolume={setVolume} />
+      <SoundLevel audioRef={audioRef} volume={volume} setVolume={setVolume} />
     </div>
   );
 }

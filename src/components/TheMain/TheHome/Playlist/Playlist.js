@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import useMenu from "../../../../hooks/useContextMenu/useContextMenu";
+import { SpotifyState } from "Context";
 
-import PlaylistButtonPlay from "./PlaylistButtonPlay";
 import PlaylistCover from "./PlaylistCover";
 import PlaylistDescription from "./PlaylistDescription";
 import PlaylistTitle from "./PlaylistTitle";
@@ -14,7 +14,9 @@ const Playlist = ({
   artist,
   toggleScrolling,
   showToast,
+  index,
 }) => {
+  const { changeTrack } = SpotifyState();
   const generateMenuItems = (isAlternate = false) => {
     return [
       {
@@ -87,11 +89,13 @@ const Playlist = ({
       className={`p-4 rounded-mb  duration-200 group relative ${classes} ${bgClasses}`}
       onContextMenu={menu.handleOpen}
       onTouchStart={menu.handleOpen}
-      onClick={(e) => e.preventDefault()}
+      onClick={(e) => {
+        e.preventDefault();
+        changeTrack(index, 0);
+      }}
     >
       <div className="relative">
         <PlaylistCover url={imgUrl} />
-        <PlaylistButtonPlay />
       </div>
       <PlaylistTitle title={title} />
       <PlaylistDescription description={artist} />

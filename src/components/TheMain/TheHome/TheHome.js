@@ -17,15 +17,9 @@ function TheHome({ toggleScrolling, showToast }) {
                 <a href="/">Good afternoon</a>
               </h2>
             </div>
-            <a
-              className="uppercase text-xs font-semibold tracking-widest hover:underline text-[#b3b3b3] leading-6"
-              href="/"
-            >
-              See all
-            </a>
           </div>
           <div className="grid sm:grid-cols-playlists-mobile md:grid-cols-playlists-tablet lg:grid-cols-playlists-desktop gap-5">
-            {PLAYLIST.map((playlist) => {
+            {PLAYLIST.slice(0, 8).map((playlist) => {
               return (
                 <Playlist
                   {...playlist}
@@ -44,15 +38,9 @@ function TheHome({ toggleScrolling, showToast }) {
                 <a href="/">Made For {name}</a>
               </h2>
             </div>
-            <a
-              className="uppercase text-xs font-semibold tracking-widest hover:underline text-[#b3b3b3] leading-6"
-              href="/"
-            >
-              See all
-            </a>
           </div>
           <div className="grid sm:grid-cols-playlists-mobile md:grid-cols-playlists-tablet lg:grid-cols-playlists-desktop gap-5">
-            {PLAYLIST.map((playlist) => {
+            {PLAYLIST.slice(0, 6).map((playlist) => {
               return (
                 <Playlist
                   {...playlist}

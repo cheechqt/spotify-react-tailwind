@@ -9,6 +9,7 @@ function FormFooter({ handleClick }) {
         <a
           href="https://www.spotify.com/kg-ru/legal/end-user-agreement/"
           target="_blank"
+          rel="noreferrer"
           className="text-[#1DB954] underline hover:text-[#3edf76]"
         >
           Terms and Conditions of Use.
@@ -21,6 +22,7 @@ function FormFooter({ handleClick }) {
         <a
           href="https://www.spotify.com/kg-ru/legal/privacy-policy/"
           target="_blank"
+          rel="noreferrer"
           className="text-[#1DB954] underline hover:text-[#3edf76]"
         >
           Spotify's Privacy Policy

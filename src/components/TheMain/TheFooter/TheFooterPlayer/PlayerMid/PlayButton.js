@@ -1,28 +1,18 @@
 import React from "react";
-import { PlayIcon, PauseIcon } from "@heroicons/react/24/solid";
-import { SpotifyState } from "Context";
+import Icon from "./ControlBoxIcon";
 
-function PlayButton({ audioRef }) {
-  const { isPlaying, setIsPlaying } = SpotifyState();
-
-  const handleTogglePausePlay = (isPlaying) => {
-    const prevValue = isPlaying;
-    setIsPlaying(!prevValue);
-    if (!prevValue) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-  };
-
+function PlayButton({ isPlaying, setIsPlaying }) {
   return (
     <div
-      className="w-8 h-8 rounded-3xl border-none bg-white p-0 transition-transform duration-200 hover:scale-110"
+      className="flex justify-center items-center w-8 h-8 rounded-3xl border-none bg-white p-0 transition-transform duration-200 hover:scale-110"
       tabIndex="0"
       role="button"
-      onClick={() => handleTogglePausePlay(isPlaying)}
+      onClick={() => {
+        setIsPlaying(!isPlaying);
+        console.log(isPlaying);
+      }}
     >
-      {isPlaying ? <PauseIcon /> : <PlayIcon />}
+      <Icon value={isPlaying ? "pause" : "play"} />
     </div>
   );
 }

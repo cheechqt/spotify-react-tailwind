@@ -9,9 +9,9 @@ function Button({
 }) {
   const img =
     icon === "facebook" ? (
-      <img src={facebookIcon} className="pr-4" />
+      <img src={facebookIcon} className="pr-4" alt="Sign up with Facebook" />
     ) : icon === "google" ? (
-      <img src={googleIcon} className="pr-4" />
+      <img src={googleIcon} className="pr-4" alt="Sign up with Google" />
     ) : (
       ""
     );
