@@ -1,6 +1,5 @@
 import { SpotifyState } from "Context";
 import Icon from "./ControlBoxIcon";
-
 import { PLAYLIST } from "data";
 import PlayButton from "./PlayButton";
 
@@ -25,17 +24,17 @@ function ControlBox({ isPlaying, setIsPlaying }) {
   }
 
   return (
-    <div className="w-[224px] flex items-center justify-between mb-3">
+    <div className="w-[224px] flex items-center justify-between mb-2">
       <Icon value="mix" />
       <button
-        className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center"
+        className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center cursor-default"
         onClick={decreaseIndex}
       >
         <Icon value="prev" />
       </button>
       <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
       <button
-        className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center"
+        className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center cursor-default"
         onClick={increaseIndex}
       >
         <Icon value="next" />

@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import TheMain from "../containers/TheMain";
 import TheSignUp from "./TheSignUp";
 import TheLogin from "./TheLogin";
-import TheSearch from "components/TheMain/TheSearch/TheSearch";
-import TheLibrary from "components/TheMain/TheLibrary/TheLibrary";
+import TheSearch from "containers/TheSearch";
+import TheLibrary from "containers/TheLibrary";
 
 function App() {
   return (

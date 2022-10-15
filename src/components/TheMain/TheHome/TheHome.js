@@ -40,7 +40,7 @@ function TheHome({ toggleScrolling, showToast }) {
             </div>
           </div>
           <div className="grid sm:grid-cols-playlists-mobile md:grid-cols-playlists-tablet lg:grid-cols-playlists-desktop gap-5">
-            {PLAYLIST.slice(0, 6).map((playlist) => {
+            {PLAYLIST.slice(-8).reverse().map((playlist) => {
               return (
                 <Playlist
                   {...playlist}

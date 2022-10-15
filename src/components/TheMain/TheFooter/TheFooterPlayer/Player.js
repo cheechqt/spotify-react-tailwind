@@ -50,9 +50,9 @@ function Player() {
   });
 
   return (
-    <footer className="grid grid-cols-footer py-4 px-8 gap-y-2 gap-x-6 bg-[#181818] border-t-2 border-[#282828]">
+    <footer className="grid grid-cols-footer py-4 px-4 gap-y-2 gap-x-6 bg-[#181818] border-t-2 border-[#282828] h-[90px]">
       <PlayerLeft trackData={trackData} />
-      <div className=" flex flex-col items-center">
+      <div className=" flex flex-col items-center h-[57px]">
         <ControlBox isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
         <ProgressBar
           currentTime={currentTime}

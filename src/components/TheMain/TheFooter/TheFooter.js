@@ -1,6 +1,6 @@
 import BaseButton from "../../Base/BaseButton";
 import TheFooterNotSignedUp from "./TheFooterNotSignedUp";
-import TheFooterPlayer from "./TheFooterPlayer/Player";
+import Player from "./TheFooterPlayer/Player";
 import { Link } from "react-router-dom";
 import { SpotifyState } from "Context";
 
@@ -22,7 +22,7 @@ function TheFooter() {
     );
   }
 
-  return <TheFooterPlayer />;
+  return <Player />;
 }
 
 export default TheFooter;

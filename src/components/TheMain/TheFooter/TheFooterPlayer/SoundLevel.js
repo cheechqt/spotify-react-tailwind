@@ -20,15 +20,15 @@ function SoundLevel({ audioRef, volume, setVolume }) {
 
   return (
     <div className="w-8 h-8 flex items-center">
-      <button className="h-8 w-8 mr-2" tabIndex="0" onClick={soundBtn}>
+      <button className="h-8 w-8 mr-2 cursor-default" tabIndex="0" onClick={soundBtn}>
         {volume === 0 ? (
           <SpeakerXMarkIcon
-            className="h-5 w-5 text-white"
+            className="h-5 w-5 text-[#BABABA] hover:text-white"
             onClick={() => setVolume(0)}
           />
         ) : (
           <SpeakerWaveIcon
-            className="h-5 w-5 text-white"
+            className="h-5 w-5 text-[#BABABA] hover:text-white"
             onClick={() => setVolume(lastVolume)}
           />
         )}
