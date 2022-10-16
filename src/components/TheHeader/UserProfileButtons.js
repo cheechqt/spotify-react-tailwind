@@ -16,8 +16,6 @@ function UserProfileButtons() {
 
   function handleClose() {
     setMenuIsOpen(false);
-    console.log('closed');
-    
   }
 
   useClickAway(menuRef, handleClose, () => menuIsOpen);

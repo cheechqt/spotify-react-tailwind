@@ -1,24 +1,21 @@
+import NavItem from "./NavItem";
 import {
+  HeartIcon,
   HomeIcon,
   MagnifyingGlassIcon,
-  ViewColumnsIcon,
   PlusCircleIcon,
-  HeartIcon,
+  ViewColumnsIcon,
 } from "@heroicons/react/24/outline";
-import NavItem from "./NavItem";
 import { MIN_DESKTOP_WIDTH } from "constants/constants";
 
-const activeNavItemClasses =
-  "flex items-center text-white bg-[#282828] mx-2 px-4 py-2 rounded";
-
-const navItemClasses =
-  "flex items-center hover:text-white  mx-2 px-4 py-2 rounded duration-300";
-
 const TheNav = ({ showPopover }) => {
+  const navItemClasses =
+    "flex items-center hover:text-white  mx-2 px-4 py-2 rounded duration-300";
+
   const navItems = [
     {
       label: "Home",
-      classes: activeNavItemClasses,
+      classes: navItemClasses,
       icon: <HomeIcon className="w-6 h-6" />,
       path: "/",
     },
@@ -45,6 +42,7 @@ const TheNav = ({ showPopover }) => {
       label: "Create Playlist",
       classes: navItemClasses,
       icon: <PlusCircleIcon className="w-6 h-6" />,
+      path: "#",
       action: (target) => {
         showPopover(
           "Create a playlist",
@@ -57,6 +55,7 @@ const TheNav = ({ showPopover }) => {
       label: "Liked Songs",
       classes: navItemClasses,
       icon: <HeartIcon className="w-6 h-6" />,
+      path: "#",
       action: (target) => {
         let offset = null;
         if (window.innerWidth >= MIN_DESKTOP_WIDTH) {
@@ -75,7 +74,6 @@ const TheNav = ({ showPopover }) => {
       },
     },
   ];
-
   return (
     <nav>
       {navItems.map(({ classes, icon, label, path, action }) => (
@@ -84,6 +82,7 @@ const TheNav = ({ showPopover }) => {
           classes={classes}
           icon={icon}
           onClick={action}
+          exact
           path={path}
         >
           {label}

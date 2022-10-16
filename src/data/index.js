@@ -534,3 +534,22 @@ export const SEARCHCARDS = [
     title: "Odaklan",
   },
 ];
+
+export const LIBRARYTABS = [
+  {
+    title: "Playlists",
+    path: "/library",
+  },
+  {
+    title: "Podcasts",
+    path: "/library/podcasts",
+  },
+  {
+    title: "Artists",
+    path: "/library/artists",
+  },
+  {
+    title: "Albums",
+    path: "/library/albums",
+  },
+];

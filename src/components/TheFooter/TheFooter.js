@@ -1,4 +1,4 @@
-import BaseButton from "../../Base/BaseButton";
+import BaseButton from "../Base/BaseButton";
 import TheFooterNotSignedUp from "./TheFooterNotSignedUp";
 import Player from "./TheFooterPlayer/Player";
 import { Link } from "react-router-dom";

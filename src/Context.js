@@ -39,6 +39,7 @@ const SpotifyContext = ({ children }) => {
     <Spotify.Provider
       value={{
         user,
+        setUser,
         trackData,
         changeTrack,
       }}

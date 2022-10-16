@@ -1,6 +1,6 @@
-import Footer from "components/TheMain/TheSidebar/Footer/Footer";
-import TheNav from "components/TheMain/TheSidebar/TheNav/TheNav";
-import Overlay from "components/TheMain/TheSidebar/Overlay";
+import Footer from "components/TheSidebar/Footer/Footer";
+import TheNav from "components/TheSidebar/TheNav/TheNav";
+import Overlay from "components/TheSidebar/Overlay";
 import BaseLogo from "components/Base/BaseLogo";
 
 function TheSidebar({ showPopover }) {

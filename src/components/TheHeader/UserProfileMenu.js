@@ -2,44 +2,46 @@ import { forwardRef } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "utils/firebase";
 import UserProfileMenuItem from "./UserProfileMenuItem";
+import { SpotifyState } from "Context";
 
-  function handleSignOut() {
-    signOut(auth);
-  }
-
-const profileMenuItems = [
-  {
-    title: "Account",
-    icon: true,
-  },
-  {
-    title: "Profile",
-    icon: false,
-  },
-  {
-    title: "Upgrade to Premium",
-    icon: true,
-  },
-  {
-    title: "Support",
-    icon: true,
-  },
-  {
-    title: "Download",
-    icon: true,
-  },
-  {
-    title: "Settings",
-    icon: false,
-  },
-  {
-    title: "Log out",
-    icon: false,
-    classes: "before:border-t before:border-[#3E3E3E] before:block",
-    onClick: handleSignOut,
-  },
-];
 function UserProfileMenu(_, ref) {
+  const { setUser } = SpotifyState();
+
+  const profileMenuItems = [
+    {
+      title: "Account",
+      icon: true,
+    },
+    {
+      title: "Profile",
+      icon: false,
+    },
+    {
+      title: "Upgrade to Premium",
+      icon: true,
+    },
+    {
+      title: "Support",
+      icon: true,
+    },
+    {
+      title: "Download",
+      icon: true,
+    },
+    {
+      title: "Settings",
+      icon: false,
+    },
+    {
+      title: "Log out",
+      icon: false,
+      classes: "before:border-t before:border-[#3E3E3E] before:block",
+      onClick: () => {
+        signOut(auth);
+        setUser(null);
+      },
+    },
+  ];
   return (
     <div className="z-50 absolute top-[54px] right-1 m-0 " ref={ref}>
       <div className="m-0 p-0 border-0">
@@ -48,7 +50,7 @@ function UserProfileMenu(_, ref) {
             {profileMenuItems.map((item) => {
               return (
                 <UserProfileMenuItem
-                  key = {item.title}
+                  key={item.title}
                   title={item.title}
                   icon={item.icon}
                   classes={item.classes}
