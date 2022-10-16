@@ -6,6 +6,7 @@ import PlaylistCover from "./PlaylistCover";
 import PlaylistDescription from "./PlaylistDescription";
 import PlaylistTitle from "./PlaylistTitle";
 import PlaylistContextMenu from "./PlaylistContextMenu/PlaylistContextMenu";
+import PlaylistButtonPlay from "./PlaylistButtonPlay";
 
 const Playlist = ({
   classes,
@@ -16,7 +17,6 @@ const Playlist = ({
   showToast,
   index,
 }) => {
-  const { changeTrack } = SpotifyState();
   const generateMenuItems = (isAlternate = false) => {
     return [
       {
@@ -53,8 +53,21 @@ const Playlist = ({
     ];
   };
 
+  const { changeTrack, trackData } = SpotifyState();
+
+  const [isThisPlaying, setIsThisPlaying] = useState(false);
+
   const [menuItems, setMenuItems] = useState(generateMenuItems);
   const menu = useMenu(menuItems);
+
+  useEffect(() => {
+    setIsThisPlaying(index === trackData.trackKey[0]);
+    console.log(isThisPlaying);
+    console.log(index);
+    console.log(trackData.trackKey[0]);
+    
+    
+  });
 
   useLayoutEffect(() => toggleScrolling(!menu.isOpen));
 
@@ -96,6 +109,7 @@ const Playlist = ({
     >
       <div className="relative">
         <PlaylistCover url={imgUrl} />
+        <PlaylistButtonPlay isThisPlaying={isThisPlaying} />
       </div>
       <PlaylistTitle title={title} />
       <PlaylistDescription description={artist} />

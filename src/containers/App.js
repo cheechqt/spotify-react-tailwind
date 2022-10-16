@@ -3,11 +3,11 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import TheSignUp from "./TheSignUp";
 import TheLogin from "./TheLogin";
-import TheSearch from "containers/TheSearch";
-import TheLibrary from "containers/TheLibrary";
-import TheHome from "containers/TheHome";
-import TheSidebar from "./TheSidebar";
-import TheFooter from "containers/TheFooter";
+import TheSearch from "containers/main/TheSearch";
+import TheLibrary from "containers/main/TheLibrary";
+import TheHome from "containers/main/TheHome";
+import TheSidebar from "containers/main/TheSidebar";
+import TheFooter from "containers/main/TheFooter";
 import BaseToast from "components/Base/BaseToast";
 import BasePopover from "components/Base/BasePopover/BasePopover";
 

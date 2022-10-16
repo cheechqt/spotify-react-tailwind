@@ -1,5 +1,4 @@
-import React from "react";
-import Icon from "./ControlBoxIcon";
+import Icon from "components/Base/BaseIcon";
 
 function PlayButton({ isPlaying, setIsPlaying }) {
   return (
@@ -9,7 +8,6 @@ function PlayButton({ isPlaying, setIsPlaying }) {
       role="button"
       onClick={() => {
         setIsPlaying(!isPlaying);
-        console.log(isPlaying);
       }}
     >
       <Icon value={isPlaying ? "pause" : "play"} />

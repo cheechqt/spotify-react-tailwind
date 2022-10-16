@@ -1,6 +1,6 @@
 import { SpotifyState } from "Context";
-import TheHeader from "containers/TheHeader";
-import Playlist from "../components/TheHome/Playlist/Playlist";
+import TheHeader from "components/TheHeader/TheHeader";
+import Playlist from "components/TheHome/Playlist/Playlist";
 import { PLAYLIST } from "data";
 
 function TheHome({ toggleScrolling, showToast }) {

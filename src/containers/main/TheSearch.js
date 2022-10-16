@@ -1,4 +1,4 @@
-import TheHeader from "containers/TheHeader";
+import TheHeader from "components/TheHeader/TheHeader";
 import SearchPageCard from "components/TheSearch/SearchCard";
 import { SEARCHCARDS } from "data/index";
 function Search() {

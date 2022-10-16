@@ -7,6 +7,7 @@ const Spotify = createContext();
 
 const SpotifyContext = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false)
   const [trackData, setTrackData] = useState({
     trackKey: [0, 0],
     track: PLAYLIST[0].playlistData[0].link,
@@ -24,8 +25,6 @@ const SpotifyContext = ({ children }) => {
   }, []);
 
   function changeTrack(playlistIndex, trackIndex = 0) {
-    console.log(PLAYLIST[playlistIndex].playlistData[trackIndex].link);
-    
     setTrackData({
       trackKey: [playlistIndex, trackIndex],
       track: PLAYLIST[playlistIndex].playlistData[trackIndex].link,
@@ -42,6 +41,8 @@ const SpotifyContext = ({ children }) => {
         setUser,
         trackData,
         changeTrack,
+        isPlaying,
+        setIsPlaying
       }}
     >
       {children}

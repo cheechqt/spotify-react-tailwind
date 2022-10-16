@@ -9,9 +9,8 @@ import ProgressBar from "./PlayerMid/ProgressBar";
 import Audio from "./Audio";
 
 function Player() {
-  const { trackData, changeTrack } = SpotifyState();
+  const { trackData, changeTrack, isPlaying, setIsPlaying } = SpotifyState();
 
-  const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
@@ -41,10 +40,7 @@ function Player() {
       ) {
         changeTrack(trackData.trackKey[0], 0);
       } else {
-        changeTrack(
-          trackData.trackKey[0],
-          parseInt(trackData.trackKey[1]) + 1,
-        );
+        changeTrack(trackData.trackKey[0], parseInt(trackData.trackKey[1]) + 1);
       }
     });
   });

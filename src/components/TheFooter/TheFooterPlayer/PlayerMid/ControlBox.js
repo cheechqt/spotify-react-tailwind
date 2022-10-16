@@ -1,5 +1,5 @@
 import { SpotifyState } from "Context";
-import Icon from "./ControlBoxIcon";
+import Icon from "components/Base/BaseIcon";
 import { PLAYLIST } from "data";
 import PlayButton from "./PlayButton";
 
