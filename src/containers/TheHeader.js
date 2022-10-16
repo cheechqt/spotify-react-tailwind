@@ -1,13 +1,16 @@
+import { useLocation } from "react-router-dom";
 import {
   Bars3Icon,
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
-import UserProfileButtons from "./UserProfileButtons";
-import SearchBar from "./SearchBar";
-import TabButtons from "./TabButtons";
+import UserProfileButtons from "components/TheHeader/UserProfileButtons";
+import SearchBar from "components/TheHeader/SearchBar";
+import TabButtons from "components/TheHeader/TabButtons";
 
 function TheHeader({ search = false, tabButtons = false }) {
+  const router = useLocation();
+  if (router.pathname === "/login" || router.pathname === "/signup") return "";
   return (
     <header
       className={`sticky z-10 top-0 bg-[#070707] flex-1 flex items-center justify-between  sm:pl-[32px] pl-[13px] pr-1 py-4`}
@@ -25,8 +28,8 @@ function TheHeader({ search = false, tabButtons = false }) {
         <a className="ml-[8px] text-[#969696] p-1 cursor-not-allowed" href="/">
           <ChevronRightIcon className="h-6 w-6" />
         </a>
-      {search && <SearchBar />}
-      {tabButtons && <TabButtons />}
+        {search && <SearchBar />}
+        {tabButtons && <TabButtons />}
       </div>
       <UserProfileButtons />
     </header>

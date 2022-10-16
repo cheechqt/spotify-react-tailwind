@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import TheSignUp from "./TheSignUp";
 import TheLogin from "./TheLogin";
@@ -7,7 +7,7 @@ import TheSearch from "containers/TheSearch";
 import TheLibrary from "containers/TheLibrary";
 import TheHome from "containers/TheHome";
 import TheSidebar from "./TheSidebar";
-import TheFooter from "components/TheFooter/TheFooter";
+import TheFooter from "containers/TheFooter";
 import BaseToast from "components/Base/BaseToast";
 import BasePopover from "components/Base/BasePopover/BasePopover";
 
@@ -17,6 +17,15 @@ function App() {
 
   const contentWrapperRef = useRef();
   let isScrollingEnabled = true;
+
+  const router = useLocation();
+  const currentPath = router.pathname;
+  const bgColor =
+    currentPath === "/login"
+      ? "bg-white"
+      : currentPath === "/signup"
+      ? "bg-white"
+      : "bg-[#121212]";
 
   useEffect(() => {
     const contentWrapper = contentWrapperRef.current;
@@ -45,8 +54,8 @@ function App() {
   };
   return (
     <>
-      <div className="flex flex-grow overflow-auto bg-[#121212]">
-        <TheSidebar showPopover={showPopover} />
+      <div className={`flex flex-grow overflow-auto ${bgColor}`}>
+        <TheSidebar showPopover={showPopover} curentPath={currentPath} />
         <div className="flex-1 overflow-auto" ref={contentWrapperRef}>
           <Routes>
             <Route
@@ -65,7 +74,7 @@ function App() {
           </Routes>
         </div>
       </div>
-      <TheFooter />
+      <TheFooter currentPath={currentPath} />
       <BaseToast ref={toastRef} />
       <BasePopover ref={popoverRef} />
     </>

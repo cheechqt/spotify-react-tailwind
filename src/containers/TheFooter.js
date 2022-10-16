@@ -1,12 +1,14 @@
-import BaseButton from "../Base/BaseButton";
-import TheFooterNotSignedUp from "./TheFooterNotSignedUp";
-import Player from "./TheFooterPlayer/Player";
 import { Link } from "react-router-dom";
 import { SpotifyState } from "Context";
+import BaseButton from "components/Base/BaseButton";
+import TheFooterNotSignedUp from "components/TheFooter/TheFooterNotSignedUp";
+import Player from "components/TheFooter/TheFooterPlayer/Player";
 
-function TheFooter() {
+function TheFooter({ currentPath }) {
   const { user } = SpotifyState();
   const name = user?.displayName;
+
+  if (currentPath === "/login" || currentPath === "/signup") return "";
 
   if (!name) {
     return (
