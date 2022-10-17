@@ -62,11 +62,6 @@ const Playlist = ({
 
   useEffect(() => {
     setIsThisPlaying(index === trackData.trackKey[0]);
-    console.log(isThisPlaying);
-    console.log(index);
-    console.log(trackData.trackKey[0]);
-    
-    
   });
 
   useLayoutEffect(() => toggleScrolling(!menu.isOpen));
