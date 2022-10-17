@@ -1,13 +1,12 @@
 import { forwardRef } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "utils/firebase";
-import UserProfileMenuItem from "./UserProfileMenuItem";
+import UserMenuItem from "./UserMenuItem";
 import { SpotifyState } from "Context";
 
-function UserProfileMenu(_, ref) {
+function UserMenu(_, ref) {
   const { setUser } = SpotifyState();
-
-  const profileMenuItems = [
+  const menuItems = [
     {
       title: "Account",
       icon: true,
@@ -43,13 +42,13 @@ function UserProfileMenu(_, ref) {
     },
   ];
   return (
-    <div className="z-50 absolute top-[54px] right-1 m-0 " ref={ref}>
+    <div className="z-50 absolute top-[70px] right-8 m-0 " ref={ref}>
       <div className="m-0 p-0 border-0">
         <div className="min-w-[196px]">
           <ul className="bg-[#282828] min-w-[160px] max-w-[360px] rounded-[4px] p-1 overflow-y-auto shadow-3xl list-none">
-            {profileMenuItems.map((item) => {
+            {menuItems.map((item) => {
               return (
-                <UserProfileMenuItem
+                <UserMenuItem
                   key={item.title}
                   title={item.title}
                   icon={item.icon}
@@ -65,4 +64,4 @@ function UserProfileMenu(_, ref) {
   );
 }
 
-export default forwardRef(UserProfileMenu);
+export default forwardRef(UserMenu);

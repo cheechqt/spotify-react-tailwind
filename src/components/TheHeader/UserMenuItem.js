@@ -1,6 +1,6 @@
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
-function UserProfileMenuItem({ title, icon, classes, onClick }) {
+function UserMenuItem({ title, icon, classes, onClick }) {
   return (
     <li className={`${classes} m-0 p-0 rounded-2 hover:bg-[#3e3e3e]`}>
       <button
@@ -16,4 +16,4 @@ function UserProfileMenuItem({ title, icon, classes, onClick }) {
   );
 }
 
-export default UserProfileMenuItem;
+export default UserMenuItem;

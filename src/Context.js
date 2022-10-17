@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
 import { PLAYLIST } from "data";
@@ -6,6 +7,7 @@ import { PLAYLIST } from "data";
 const Spotify = createContext();
 
 const SpotifyContext = ({ children }) => {
+  const navigate = useNavigate()
   const [user, setUser] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false)
   const [trackData, setTrackData] = useState({
@@ -21,6 +23,7 @@ const SpotifyContext = ({ children }) => {
       if (user) {
         setUser(user);
       } else setUser(null);
+      navigate("/", { replace: true });
     });
   }, []);
 

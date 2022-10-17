@@ -1,7 +1,7 @@
 import Icon from "components/Base/BaseIcon";
 import { SpotifyState } from "Context";
 
-const PlaylistButtonPlay = ({ isThisPlaying, index }) => {
+const PlaylistButtonPlay = ({ isThisPlaying }) => {
   const { setIsPlaying, isPlaying } = SpotifyState();
   const playingClasses =
     isThisPlaying && isPlaying

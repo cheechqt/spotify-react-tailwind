@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useState } from "react";
-import useMenu from "../../../hooks/useContextMenu/useContextMenu";
+import useMenu from "hooks/useContextMenu/useContextMenu";
 import { SpotifyState } from "Context";
 
 import PlaylistCover from "./PlaylistCover";
@@ -62,7 +62,7 @@ const Playlist = ({
 
   useEffect(() => {
     setIsThisPlaying(index === trackData.trackKey[0]);
-  });
+  }, [index, trackData.trackKey]);
 
   useLayoutEffect(() => toggleScrolling(!menu.isOpen));
 

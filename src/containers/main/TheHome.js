@@ -1,6 +1,7 @@
 import { SpotifyState } from "Context";
 import TheHeader from "components/TheHeader/TheHeader";
-import Playlist from "components/TheHome/Playlist/Playlist";
+import Playlist from "components/TheHome/Playlist";
+import Background from "components/TheHome/Background";
 import { PLAYLIST } from "data";
 
 function TheHome({ toggleScrolling, showToast }) {
@@ -8,11 +9,11 @@ function TheHome({ toggleScrolling, showToast }) {
   const name = user?.displayName;
 
   return (
-    <div className="flex-1 overflow-auto">
+    <div className="flex-1 overflow-auto relative">
+      <Background />
       <TheHeader />
-      <main className="text-white relative">
-        <div className="h-[275px] bg-gradient-to-b from-[#1f1f1f] to-[#121212] absolute w-full"></div>
-        <div className="relative bg-[#121212] pt-[24px] pb-[48px] px-[32px] space-y-9  max-w-screen-5xl">
+      <main className="text-white relative ">
+        <div className="relative  pt-[24px] pb-[48px] px-[32px] space-y-9  max-w-screen-5xl">
           <div>
             <div className="flex flex-wrap justify-between items-end gap-x-6 mb-[18px]">
               <div>

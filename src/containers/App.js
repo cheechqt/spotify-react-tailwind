@@ -25,7 +25,7 @@ function App() {
       ? "bg-white"
       : currentPath === "/signup"
       ? "bg-white"
-      : "bg-[#121212]";
+      : "bg-transparent";
 
   useEffect(() => {
     const contentWrapper = contentWrapperRef.current;
