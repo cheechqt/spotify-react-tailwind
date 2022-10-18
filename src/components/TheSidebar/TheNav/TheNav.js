@@ -33,7 +33,8 @@ const TheNav = ({ showPopover }) => {
       classes: `${navItemClasses} mb-6`,
       icon: <ViewColumnsIcon className="w-6 h-6" />,
       path: "#",
-      loggedInPath: "/library/*",
+      loggedInPath: "/library/playlists",
+      mainPath: "/library",
       action: (target) => {
         showPopover(
           "Enjoy Your Library",
@@ -98,13 +99,14 @@ const TheNav = ({ showPopover }) => {
   }
   return (
     <nav>
-      {navItems.map(({ classes, icon, label, path, loggedInPath }) => (
+      {navItems.map(({ classes, icon, label, path, loggedInPath, mainPath }) => (
         
         <NavItem
           key={label}
           classes={classes}
           icon={icon}
           path={loggedInPath ? loggedInPath : path}
+          mainPath={mainPath}
         >
           {label}
         </NavItem>

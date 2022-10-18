@@ -538,7 +538,7 @@ export const SEARCHCARDS = [
 export const LIBRARYTABS = [
   {
     title: "Playlists",
-    path: "/library",
+    path: "/library/playlists",
   },
   {
     title: "Podcasts",

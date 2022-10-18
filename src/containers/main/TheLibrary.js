@@ -9,7 +9,7 @@ function Library({ showToast, toggleScrolling }) {
       <div className="p-8 mb-[95px]">
         <Routes>
           <Route
-            path="/library"
+            path="/library/*"
             element={
               <CurrentTab
                 type="playlist"

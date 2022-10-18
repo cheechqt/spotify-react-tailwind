@@ -1,8 +1,16 @@
 import { useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
-const NavItem = ({ classes, icon, children: label, path, onClick }) => {
+const NavItem = ({
+  classes,
+  icon,
+  children: label,
+  path,
+  mainPath,
+  onClick,
+}) => {
   const labelRef = useRef();
+  const location = useLocation();
 
   const handleClick = (e) => {
     if (!onClick) return;
@@ -20,10 +28,12 @@ const NavItem = ({ classes, icon, children: label, path, onClick }) => {
       to={path}
       className={classes}
       onClick={handleClick}
-      style={({ isActive }) =>
-        isActive && path !== "#" ? activeNavItemClasses : undefined
-      }
-      end
+      style={({ isActive }) => {
+        if (location.pathname.includes(mainPath)) isActive = true;
+
+        return isActive && path !== "#" ? activeNavItemClasses : undefined;
+      }}
+      end={path === "/" && true}
     >
       {icon}
       <span ref={labelRef} className="ml-4 text-sm font-semibold">

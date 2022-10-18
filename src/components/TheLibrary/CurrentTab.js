@@ -2,6 +2,8 @@ import Playlist from "components/TheHome/Playlist";
 import { PLAYLIST } from "data";
 
 function CurrentTab({ type, toggleScrolling, showToast }) {
+  console.log(type);
+  
   return (
     <div>
       <h2 className="text-2xl font-bold m-0">{type}s</h2>
