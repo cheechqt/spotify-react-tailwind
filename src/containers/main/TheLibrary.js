@@ -4,12 +4,12 @@ import CurrentTab from "components/TheLibrary/CurrentTab";
 
 function Library({ showToast, toggleScrolling }) {
   return (
-    <div className="bg-[#121212] text-white overflow-y-scroll overflow-x-hidden">
+    <div className="bg-[#121212] h-full text-white overflow-y-scroll overflow-x-hidden">
       <TheHeader tabButtons={true} />
       <div className="p-8 mb-[95px]">
         <Routes>
           <Route
-            path="/library/*"
+            path="playlists"
             element={
               <CurrentTab
                 type="playlist"
@@ -17,9 +17,10 @@ function Library({ showToast, toggleScrolling }) {
                 toggleScrolling={toggleScrolling}
               />
             }
+            end
           />
           <Route
-            path="/library/podcasts"
+            path="podcasts"
             element={
               <CurrentTab
                 type="podcast"
@@ -29,7 +30,7 @@ function Library({ showToast, toggleScrolling }) {
             }
           />
           <Route
-            path="/library/artists"
+            path="artists"
             element={
               <CurrentTab
                 type="artist"
@@ -39,7 +40,7 @@ function Library({ showToast, toggleScrolling }) {
             }
           />
           <Route
-            path="/library/albums"
+            path="albums"
             element={
               <CurrentTab
                 type="album"

@@ -33,7 +33,7 @@ const NavItem = ({
 
         return isActive && path !== "#" ? activeNavItemClasses : undefined;
       }}
-      end={path === "/" && true}
+      end={path === "/"}
     >
       {icon}
       <span ref={labelRef} className="ml-4 text-sm font-semibold">
