@@ -23,6 +23,8 @@ module.exports = {
         footer: "30% 40% 30%",
         search: "repeat(auto-fill,minmax(180px,1fr))",
         searchMedium: "1fr 1fr",
+        libraryTab: "repeat(auto-fill,minmax(var(--cards-column-width),1fr))",
+        libraryTabSmall: "1fr 1fr"
       },
       boxShadow: {
         "3xl": "0 16px 24px rgba(0, 0, 0, .3), 0 6px 8px rgba(0, 0, 0, .2)",

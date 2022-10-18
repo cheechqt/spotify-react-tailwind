@@ -70,7 +70,15 @@ function App() {
             <Route path="/signup" element={<TheSignUp />} />
             <Route path="/login" element={<TheLogin />} />
             <Route path="/search" element={<TheSearch />} />
-            <Route path="/library" element={<TheLibrary />} />
+            <Route
+              path="/library/*"
+              element={
+                <TheLibrary
+                showToast={showToast}
+                toggleScrolling={toggleScrolling}
+                />
+              }
+            />
           </Routes>
         </div>
       </div>

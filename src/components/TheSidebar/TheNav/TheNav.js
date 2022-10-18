@@ -1,3 +1,4 @@
+import { SpotifyState } from "Context";
 import NavItem from "./NavItem";
 import {
   HeartIcon,
@@ -9,6 +10,8 @@ import {
 import { MIN_DESKTOP_WIDTH } from "constants/constants";
 
 const TheNav = ({ showPopover }) => {
+  const { user } = SpotifyState();
+
   const navItemClasses =
     "flex items-center hover:text-white  mx-2 px-4 py-2 rounded duration-300";
 
@@ -29,7 +32,8 @@ const TheNav = ({ showPopover }) => {
       label: "Your Library",
       classes: `${navItemClasses} mb-6`,
       icon: <ViewColumnsIcon className="w-6 h-6" />,
-      path: "/library",
+      path: "#",
+      loggedInPath: "/library/*",
       action: (target) => {
         showPopover(
           "Enjoy Your Library",
@@ -74,16 +78,33 @@ const TheNav = ({ showPopover }) => {
       },
     },
   ];
+  if (!user) {
+    return (
+      <nav>
+        {navItems.map(({ classes, icon, label, path, action }) => (
+          <NavItem
+            key={label}
+            classes={classes}
+            icon={icon}
+            onClick={action}
+            path={path}
+
+          >
+            {label}
+          </NavItem>
+        ))}
+      </nav>
+    );
+  }
   return (
     <nav>
-      {navItems.map(({ classes, icon, label, path, action }) => (
+      {navItems.map(({ classes, icon, label, path, loggedInPath }) => (
+        
         <NavItem
           key={label}
           classes={classes}
           icon={icon}
-          onClick={action}
-          exact
-          path={path}
+          path={loggedInPath ? loggedInPath : path}
         >
           {label}
         </NavItem>

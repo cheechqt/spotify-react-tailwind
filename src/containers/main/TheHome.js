@@ -16,8 +16,8 @@ function TheHome({ toggleScrolling, showToast }) {
         <div className="relative  pt-[24px] pb-[48px] px-[32px] space-y-9  max-w-screen-5xl">
           <div>
             <div className="flex flex-wrap justify-between items-end gap-x-6 mb-[18px]">
-              <div>
-                <h2 className="text-2xl font-semibold hover:underline capitalize">
+              <div className="pl-1">
+                <h2 className="text-2xl font-semibold">
                   <a href="/">Good afternoon</a>
                 </h2>
               </div>

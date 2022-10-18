@@ -1,10 +1,8 @@
 import { useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { SpotifyState } from "Context";
 
 const NavItem = ({ classes, icon, children: label, path, onClick }) => {
   const labelRef = useRef();
-  const { user } = SpotifyState();
 
   const handleClick = (e) => {
     if (!onClick) return;
@@ -17,13 +15,14 @@ const NavItem = ({ classes, icon, children: label, path, onClick }) => {
     backgroundColor: "#282828",
   };
 
-
   return (
     <NavLink
       to={path}
       className={classes}
-      onClick={() => user ? handleClick() : ""}
-      style={({ isActive }) => (isActive && path!=="#" ? activeNavItemClasses : undefined)}
+      onClick={handleClick}
+      style={({ isActive }) =>
+        isActive && path !== "#" ? activeNavItemClasses : undefined
+      }
       end
     >
       {icon}
