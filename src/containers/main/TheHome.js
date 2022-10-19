@@ -1,6 +1,6 @@
 import { SpotifyState } from "Context";
 import TheHeader from "components/TheHeader/TheHeader";
-import Playlist from "components/TheHome/Playlist";
+import Playlist from "components/Base/BasePlaylistItem";
 import Background from "components/TheHome/Background";
 import { PLAYLIST } from "data";
 

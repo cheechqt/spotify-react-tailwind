@@ -22,7 +22,7 @@ function RangeSlider({
     } else {
       setDecimalValue(value);
     }
-  });
+  }, [maxvalue, value]);
 
   const handleInputChange = (e) => {
     handleChange(parseFloat(e.target.value));

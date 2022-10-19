@@ -1,11 +1,12 @@
 import { useEffect, useLayoutEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useMenu from "hooks/useContextMenu/useContextMenu";
 import { SpotifyState } from "Context";
 
-import PlaylistCover from "./PlaylistCover";
-import PlaylistDescription from "./PlaylistDescription";
-import PlaylistTitle from "./PlaylistTitle";
-import PlaylistContextMenu from "./PlaylistContextMenu/PlaylistContextMenu";
+import PlaylistCover from "../TheHome/PlaylistCover";
+import PlaylistDescription from "../TheHome/PlaylistDescription";
+import PlaylistTitle from "../TheHome/PlaylistTitle";
+import PlaylistContextMenu from "../TheHome/PlaylistContextMenu/PlaylistContextMenu";
 import PlayButton from "components/Base/BasePlayButton";
 
 const Playlist = ({
@@ -17,6 +18,7 @@ const Playlist = ({
   toggleScrolling,
   showToast,
   index,
+  link,
 }) => {
   const generateMenuItems = (isAlternate = false) => {
     return [
@@ -93,36 +95,43 @@ const Playlist = ({
     : "bg-[#181818] hover:bg-[#272727]";
 
   return (
-    <a
-      href="/"
-      className={`p-4 rounded-mb  duration-200 group relative ${classes} ${bgClasses}`}
-      onContextMenu={menu.handleOpen}
-      onTouchStart={menu.handleOpen}
-      onClick={(e) => {
-        e.preventDefault();
-        changeTrack(index, 0);
-      }}
-    >
-      <div className="relative">
-        <PlaylistCover url={imgUrl} />
+    <div className="group relative overflow-hidden rounded-mb">
+      <Link to={`/playlist/${link}`}>
+        <div
+          className={`p-4 rounded-mb  duration-200 relative bg-red h-full ${classes} ${bgClasses}`}
+          onContextMenu={menu.handleOpen}
+          onTouchStart={menu.handleOpen}
+        >
+          <PlaylistCover url={imgUrl} />
+          <PlaylistTitle title={title} />
+          <PlaylistDescription description={artist} />
+          {menu.isOpen && (
+            <PlaylistContextMenu
+              menuItems={menu.items}
+              classes="fixed divide-y divide-[#3e3e3e]"
+              ref={menu.ref}
+            />
+          )}
+        </div>
+      </Link>
+      <div
+        className="bg-transparent w-11 h-11 rounded-full absolute z-10 right-[25px] top-[124px]"
+        onClick={(e) => {
+          e.stopPropagation();
+          changeTrack(index, 0);
+        }}
+      >
+        {" "}
         {name && (
           <PlayButton
             isThisPlaying={isThisPlaying}
             opacityClasses={true}
-            classes="absolute right-2 bottom-2 bg-[#1cb955]"
+            classes="absolute top-0 right-0 bg-[#1cb955] z-20 w-11 h-11"
+            svgClass="h-6 w-6"
           />
         )}
       </div>
-      <PlaylistTitle title={title} />
-      <PlaylistDescription description={artist} />
-      {menu.isOpen && (
-        <PlaylistContextMenu
-          menuItems={menu.items}
-          classes="fixed divide-y divide-[#3e3e3e]"
-          ref={menu.ref}
-        />
-      )}
-    </a>
+    </div>
   );
 };
 

@@ -7,6 +7,7 @@ module.exports = {
       xs: "400px",
       sm: "500px",
       md: "700px",
+      maxmd: { max: "700px" },
       lg: "900px",
       xl: "1100px",
       "2xl": "1300px",
@@ -26,9 +27,12 @@ module.exports = {
         libraryTab: "repeat(auto-fill,minmax(var(--cards-column-width),1fr))",
         libraryTabSmall: "1fr 1fr",
         listHead: "16px 1fr 16px",
+        playlistDetails: "232px 1fr",
+        "1fr": "1fr",
       },
       boxShadow: {
         "3xl": "0 16px 24px rgba(0, 0, 0, .3), 0 6px 8px rgba(0, 0, 0, .2)",
+        playlistImg: "0 4px 60px rgb(0 0 0 / 50%)",
       },
       backgroundImage: {
         "search-card-gradient":

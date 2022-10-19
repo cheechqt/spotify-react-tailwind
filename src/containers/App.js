@@ -80,7 +80,7 @@ function App() {
                 />
               }
             />
-            {/* <Route path="/playlist/:path" element={<ThePlaylist />} /> */}
+            <Route path="/playlist/:path" element={<ThePlaylist />} />
           </Routes>
         </div>
       </div>

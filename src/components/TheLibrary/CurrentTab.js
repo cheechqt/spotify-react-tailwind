@@ -1,4 +1,4 @@
-import Playlist from "components/TheHome/Playlist";
+import Playlist from "components/Base/BasePlaylistItem";
 import { PLAYLIST } from "data";
 
 function CurrentTab({ type, toggleScrolling, showToast }) {

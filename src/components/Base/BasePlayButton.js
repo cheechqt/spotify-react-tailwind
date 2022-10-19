@@ -5,6 +5,7 @@ function PlayButton({
   isThisPlaying,
   classes = "bg-white",
   opacityClasses = false,
+  svgClass,
 }) {
   const { setIsPlaying, isPlaying } = SpotifyState();
   const hideClasses = opacityClasses
@@ -14,10 +15,10 @@ function PlayButton({
     : "";
   return (
     <div
-      className={`flex justify-center items-center h-9 w-9 rounded-full shadow-xl flex justify-center items-center cursor-default duration-200 ${hideClasses} ${classes} `}
+      className={`flex justify-center items-center h-9 w-9 rounded-full shadow-xl flex justify-center items-center cursor-default duration-200 hover:scale-105 ${hideClasses} ${classes} `}
       tabIndex="0"
       role="button"
-      onClick={() => {
+      onClick={(e) => {
         if (isThisPlaying && isPlaying) {
           setIsPlaying(false);
         } else {
@@ -25,7 +26,10 @@ function PlayButton({
         }
       }}
     >
-      <Icon value={isThisPlaying && isPlaying ? "pause" : "play"} />
+      <Icon
+        svgClass={svgClass}
+        value={isThisPlaying && isPlaying ? "pause" : "play"}
+      />
     </div>
   );
 }

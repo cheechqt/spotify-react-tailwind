@@ -3,7 +3,7 @@ const PlaylistCover = ({ url }) => {
     <img
       className="rounded shadow-lg"
       src={url}
-      alt="123"
+      alt="playlist cover"
     />
   );
 };
