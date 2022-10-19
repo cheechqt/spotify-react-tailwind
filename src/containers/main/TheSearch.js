@@ -3,7 +3,7 @@ import SearchPageCard from "components/TheSearch/SearchCard";
 import { SEARCHCARDS } from "data/index";
 function Search() {
   return (
-    <div className="bg-[#121212] text-white overflow-y-scroll overflow-x-hidden">
+    <div className="bg-[#121212] h-full text-white overflow-y-scroll overflow-x-hidden">
       <TheHeader search={true} />
 
       <div className="py-0 md:px-8 md:pb-8 md:mb-[95px] p-4 mb-[180px] mt-6">

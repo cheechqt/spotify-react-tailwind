@@ -24,7 +24,8 @@ module.exports = {
         search: "repeat(auto-fill,minmax(180px,1fr))",
         searchMedium: "1fr 1fr",
         libraryTab: "repeat(auto-fill,minmax(var(--cards-column-width),1fr))",
-        libraryTabSmall: "1fr 1fr"
+        libraryTabSmall: "1fr 1fr",
+        listHead: "16px 1fr 16px",
       },
       boxShadow: {
         "3xl": "0 16px 24px rgba(0, 0, 0, .3), 0 6px 8px rgba(0, 0, 0, .2)",

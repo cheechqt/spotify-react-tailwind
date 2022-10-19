@@ -1,9 +1,9 @@
 import { SpotifyState } from "Context";
 import Icon from "components/Base/BaseIcon";
 import { PLAYLIST } from "data";
-import PlayButton from "./PlayButton";
+import PlayButton from "components/Base/BasePlayButton";
 
-function ControlBox({ isPlaying, setIsPlaying }) {
+function ControlBox() {
   const { trackData, changeTrack } = SpotifyState();
 
   function decreaseIndex() {
@@ -32,7 +32,7 @@ function ControlBox({ isPlaying, setIsPlaying }) {
       >
         <Icon value="prev" />
       </button>
-      <PlayButton isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+      <PlayButton isThisPlaying={true}/>
       <button
         className="border-none bg-transparent w-8 h-8 p-0 flex items-center justify-center cursor-default"
         onClick={increaseIndex}

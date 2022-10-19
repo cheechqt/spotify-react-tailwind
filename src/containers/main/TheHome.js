@@ -9,10 +9,10 @@ function TheHome({ toggleScrolling, showToast }) {
   const name = user?.displayName;
 
   return (
-    <div className="flex-1 overflow-auto relative">
+    <div className="flex-1 overflow-auto relative h-full bg-[#121212]">
       <Background />
       <TheHeader />
-      <main className="text-white relative ">
+      <main className="text-white relative z-40">
         <div className="relative  pt-[24px] pb-[48px] px-[32px] space-y-9  max-w-screen-5xl">
           <div>
             <div className="flex flex-wrap justify-between items-end gap-x-6 mb-[18px]">
@@ -26,6 +26,7 @@ function TheHome({ toggleScrolling, showToast }) {
               {PLAYLIST.slice(0, 8).map((playlist) => {
                 return (
                   <Playlist
+                    name={name}
                     {...playlist}
                     key={playlist.title}
                     toggleScrolling={toggleScrolling}
@@ -49,6 +50,7 @@ function TheHome({ toggleScrolling, showToast }) {
                 .map((playlist) => {
                   return (
                     <Playlist
+                      name={name}
                       {...playlist}
                       key={playlist.title}
                       toggleScrolling={toggleScrolling}

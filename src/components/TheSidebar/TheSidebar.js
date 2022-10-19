@@ -4,6 +4,7 @@ import Overlay from "components/TheSidebar/Overlay";
 import BaseLogo from "components/Base/BaseLogo";
 
 function TheSidebar({ showPopover }) {
+
   return (
     <>
       <aside

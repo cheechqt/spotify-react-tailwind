@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   Bars3Icon,
   ChevronLeftIcon,
@@ -10,11 +10,9 @@ import TabButtons from "components/TheHeader/TabButtons";
 
 function TheHeader({ search = false, tabButtons = false }) {
   const navigate = useNavigate();
-  const router = useLocation();
-  if (router.pathname === "/login" || router.pathname === "/signup") return "";
 
   return (
-    <header className="sticky z-10 top-0 bg-transparent flex-1 flex items-center justify-between sm:px-[32px] px-[13px] py-4">
+    <header className="sticky z-50 top-0 bg-transparent flex-1 flex items-center justify-between sm:px-[32px] px-[13px] py-4">
       <div className="flex gap-3.5">
         <a
           className="mr-[8px] text-[#969696] p-1 -ml-1.5 inline-block lg:hidden"

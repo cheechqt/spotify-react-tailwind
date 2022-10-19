@@ -10,6 +10,7 @@ import TheSidebar from "containers/main/TheSidebar";
 import TheFooter from "containers/main/TheFooter";
 import BaseToast from "components/Base/BaseToast";
 import BasePopover from "components/Base/BasePopover/BasePopover";
+import ThePlaylist from "./main/ThePlaylist";
 
 function App() {
   const toastRef = useRef();
@@ -55,7 +56,7 @@ function App() {
   return (
     <>
       <div className={`flex flex-grow overflow-auto ${bgColor}`}>
-        <TheSidebar showPopover={showPopover} curentPath={currentPath} />
+        <TheSidebar showPopover={showPopover} currentPath={currentPath} />
         <div className="flex-1 overflow-auto" ref={contentWrapperRef}>
           <Routes>
             <Route
@@ -74,11 +75,12 @@ function App() {
               path="/library/*"
               element={
                 <TheLibrary
-                showToast={showToast}
-                toggleScrolling={toggleScrolling}
+                  showToast={showToast}
+                  toggleScrolling={toggleScrolling}
                 />
               }
             />
+            {/* <Route path="/playlist/:path" element={<ThePlaylist />} /> */}
           </Routes>
         </div>
       </div>

@@ -27,7 +27,7 @@ function TheLogin() {
       <div className="max-w-[450px] w-full mx-auto p-3 md:px-0">
         <ButtonsGroup />
 
-        <Form handleClick={handleLogin} />
+        <Form handleClick={handleLogin}/>
 
         <Footer />
       </div>

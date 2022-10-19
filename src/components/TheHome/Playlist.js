@@ -6,9 +6,10 @@ import PlaylistCover from "./PlaylistCover";
 import PlaylistDescription from "./PlaylistDescription";
 import PlaylistTitle from "./PlaylistTitle";
 import PlaylistContextMenu from "./PlaylistContextMenu/PlaylistContextMenu";
-import PlaylistButtonPlay from "./PlaylistButtonPlay";
+import PlayButton from "components/Base/BasePlayButton";
 
 const Playlist = ({
+  name,
   classes,
   imgUrl,
   title,
@@ -104,7 +105,13 @@ const Playlist = ({
     >
       <div className="relative">
         <PlaylistCover url={imgUrl} />
-        <PlaylistButtonPlay isThisPlaying={isThisPlaying} />
+        {name && (
+          <PlayButton
+            isThisPlaying={isThisPlaying}
+            opacityClasses={true}
+            classes="absolute right-2 bottom-2 bg-[#1cb955]"
+          />
+        )}
       </div>
       <PlaylistTitle title={title} />
       <PlaylistDescription description={artist} />

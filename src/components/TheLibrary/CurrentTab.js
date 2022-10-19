@@ -7,7 +7,7 @@ function CurrentTab({ type, toggleScrolling, showToast }) {
       <div className="flex flex-wrap justify-between items-end gap-x-6 mb-[18px]">
         <div>
           <h2 className="text-2xl font-semibold hover:underline capitalize">
-            <a href="/">{type}</a>
+            <a href="/">{type}s</a>
           </h2>
         </div>
       </div>
