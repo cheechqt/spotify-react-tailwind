@@ -17,6 +17,9 @@ module.exports = {
       "6xl": "2100px",
     },
     extend: {
+      spacing: {
+        "100-8": "calc(100%-8px)",
+      },
       gridTemplateColumns: {
         "playlists-mobile": "repeat(auto-fill, minmax(208px, 1fr))",
         "playlists-tablet": "repeat(auto-fill, minmax(266px, 1fr))",
@@ -29,6 +32,7 @@ module.exports = {
         listHead: "16px 1fr 16px",
         playlistDetails: "232px 1fr",
         "1fr": "1fr",
+        trackDiv: "16px 36px 1fr 38px",
       },
       boxShadow: {
         "3xl": "0 16px 24px rgba(0, 0, 0, .3), 0 6px 8px rgba(0, 0, 0, .2)",

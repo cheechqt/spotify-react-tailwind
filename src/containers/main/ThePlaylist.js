@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { SpotifyState } from "Context";
+import { PLAYLIST } from "data/index";
+
 import TheHeader from "components/TheHeader/TheHeader";
 import Details from "components/ThePlaylist/Details";
-import { PLAYLIST } from "data/index";
+import Track from "components/ThePlaylist/Track";
 import PlayButton from "components/Base/BasePlayButton";
-import { SpotifyState } from "Context";
-import { HeartIcon, EllipsisHorizontalIcon, ClockIcon } from "@heroicons/react/24/outline";
+import {
+  HeartIcon,
+  EllipsisHorizontalIcon,
+  ClockIcon,
+} from "@heroicons/react/24/outline";
 
 function ThePlaylist() {
   const { trackData, changeTrack } = SpotifyState();
@@ -28,24 +34,24 @@ function ThePlaylist() {
       <div className="fixed top-0 right-0 left-0 bottom-0 -z-30  bg-blue-500"></div>
       <TheHeader />
 
-      {PLAYLIST.map((item) => {
-        if (item.link === path) {
-          console.log(item);
+      {PLAYLIST.map((playlist) => {
+        if (playlist.link === path) {
+          console.log(playlist);
 
           return (
             <div
-              key={item.title}
+              key={playlist.title}
               onLoad={() => {
-                changeBg(item.playlistBg);
-                setPlaylistIndex(PLAYLIST.indexOf(item));
+                changeBg(playlist.playlistBg);
+                setPlaylistIndex(PLAYLIST.indexOf(playlist));
               }}
             >
-              <Details playlistData={item} />
+              <Details playlistData={playlist} />
 
               <div className="flex items-center flex-row py-6 px-8 relative">
                 <button
                   className="border-none bg-transparent"
-                  onClick={() => changeTrack([PLAYLIST.indexOf(item), 0])}
+                  onClick={() => changeTrack([PLAYLIST.indexOf(playlist), 0])}
                 >
                   <PlayButton
                     isThisPlaying={isThisPlaying}
@@ -68,24 +74,13 @@ function ThePlaylist() {
               </div>
 
               <div className="md:py-0 md:px-8 py-0 px-4">
-                {item.playlistData.map((song) => {
+                {playlist.playlistData.map((song) => {
                   return (
                     <button
                       key={song.index}
-                      onClick={() =>
-                        changeTrack([
-                          PLAYLIST.indexOf(item),
-                          item.playlistData.indexOf(song),
-                        ])
-                      }
                       className="block w-full bg-none border border-transparent rounded-md"
                     >
-                      {/* <PlaylistTrack
-                        data={{
-                          listType: item.type,
-                          song: song,
-                        }}
-                      /> */}
+                      <Track playlist={playlist} song={song} />
                     </button>
                   );
                 })}
