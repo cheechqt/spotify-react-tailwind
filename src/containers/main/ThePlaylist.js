@@ -17,21 +17,22 @@ function ThePlaylist() {
   const { trackData, changeTrack } = SpotifyState();
   const [playlistIndex, setPlaylistIndex] = useState(undefined);
   const [isThisPlaying, setIsThisPlaying] = useState(false);
-  const [bgColor, setBgColor] = useState("bg-[#121212]")
   const { path } = useParams();
 
-  function changeBg(color) {
-    setBgColor(`bg-[${color}]`)
-  }
+  // function changeBg(color) {
+  //   setBgColor(`bg-[${color}]`)
+  // }
 
   useEffect(() => {
     setIsThisPlaying(playlistIndex === trackData.trackKey[0]);
   }, [playlistIndex, trackData.trackKey]);
 
   return (
-    <div className="overflow-y-scroll overflow-x-scroll relative pb-4 text-white">
-      <div className={`h-[340px] w-full absolute left-0 top-0 -z-20 bg-gradient-to-t from-[#121212] ${bgColor}`}></div>
-      <div className="absolute top-[340px] right-0 left-0 bottom-0 -z-30 bg-[#121212]"></div>
+    <div className="flex-1 overflow-auto relative h-full relative pb-4 text-white bg-[#121212]">
+      <div>
+        <div className="h-[333px] bg-gradient-to-t from-[#121212] bg-[#1E0E46] absolute z-20 w-full"></div>
+        <div className="h-full bg-[#121212] absolute z-10 w-full"></div>
+      </div>
       <TheHeader />
 
       {PLAYLIST.map((playlist) => {
@@ -40,7 +41,7 @@ function ThePlaylist() {
             <div
               key={playlist.title}
               onLoad={() => {
-                changeBg(playlist.playlistBg);
+                // changeBg(playlist.playlistBg);
                 setPlaylistIndex(PLAYLIST.indexOf(playlist));
               }}
             >

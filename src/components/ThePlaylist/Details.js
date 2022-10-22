@@ -1,6 +1,6 @@
 function Details({playlistData}) {
  return (
-   <div className="pt-6 px-8 pb-6 grid md:grid-cols-playlistDetails md:gap-x-6 grid-cols-1fr gap-x-2">
+   <div className="pt-6 px-8 pb-6 grid md:grid-cols-playlistDetails md:gap-x-6 grid-cols-1fr gap-x-2 z-30 relative">
      <div className="md:w-[232px] md:h-[232px] w-[125px] h-[125px]">
        <img
          src={playlistData.imgUrl}
@@ -12,7 +12,7 @@ function Details({playlistData}) {
        <h3 className="text-xs font-bold m-0 mt-1 tracking-tight uppercase">
          {playlistData.type}
        </h3>
-       <h1 className="overflow-hidden m-0 py-[2px] md:text-[96px] md:leading-[96px] text-8 leading-8 font-bold tracking-tighter">
+       <h1 className="overflow-hidden m-0 py-[2px] md:text-[96px] md:leading-[106px] text-8 leading-8 font-bold tracking-tighter">
          {playlistData.title}
        </h1>
        <div className="flex items-center mt-4 maxmd:justify-center">

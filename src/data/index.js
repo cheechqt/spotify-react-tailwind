@@ -62,7 +62,7 @@ export const PLAYLIST = [
     link: "thisisburgos",
     imgUrl: "https://thisis-images.scdn.co/37i9dQZF1DZ06evO1QPBZu-large.jpg",
     artist: "Burgos",
-    playlistBg: "#E36196",
+    playlistBg: "#B52C41",
     playlistData: [
       {
         index: "1",
