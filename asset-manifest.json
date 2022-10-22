@@ -1,13 +1,37 @@
 {
   "files": {
-    "main.css": "/spotify-react-tailwind/static/css/main.a577de1a.css",
-    "main.js": "/spotify-react-tailwind/static/js/main.8b27fbb2.js",
+    "main.css": "/spotify-react-tailwind/static/css/main.b7879a6e.css",
+    "main.js": "/spotify-react-tailwind/static/js/main.80dbed5d.js",
+    "static/media/circularstd-bolditalic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-bolditalic-webfont.b6b63fb730cc7bd7d795.woff",
+    "static/media/circularstd-mediumitalic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-mediumitalic-webfont.c5baacccb284fafdfafe.woff",
+    "static/media/circularstd-blackitalic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-blackitalic-webfont.48e39835629351db200e.woff",
+    "static/media/circularstd-bold-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-bold-webfont.0f887d25d8d915a97313.woff",
+    "static/media/circularstd-black-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-black-webfont.28717cff7cdd4d8d3902.woff",
+    "static/media/circularstd-medium-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-medium-webfont.954f8423449aa352abc6.woff",
+    "static/media/circularstd-bookitalic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-bookitalic-webfont.00d46cfd85b3578b8407.woff",
+    "static/media/circularstd-book-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-book-webfont.071f11632dc472062f8b.woff",
+    "static/media/circularstd-bolditalic-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-bolditalic-webfont.c3b4242af448bd38e6c7.woff2",
+    "static/media/circularstd-blackitalic-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-blackitalic-webfont.a4c8ebc6c79a45eef8c6.woff2",
+    "static/media/circularstd-mediumitalic-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-mediumitalic-webfont.111e38db8065151cda20.woff2",
+    "static/media/circularstd-light_italic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-light_italic-webfont.c0365600dc6b2648b7f7.woff",
+    "static/media/circularstd-light-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-light-webfont.4455ff0987529025c2f9.woff",
+    "static/media/circularstd-bookitalic-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-bookitalic-webfont.5c848cdb7bee50efd083.woff2",
+    "static/media/circularstd-bold-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-bold-webfont.045035758cdc849f0769.woff2",
+    "static/media/circularstd-black-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-black-webfont.646d70043eccda794163.woff2",
+    "static/media/circularstd-medium-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-medium-webfont.c3ed64178b0138ac037d.woff2",
+    "static/media/circularstd-book-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-book-webfont.2255c066611155abe938.woff2",
+    "static/media/circularstd-light_italic-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-light_italic-webfont.387f72eb9df043bce453.woff2",
+    "static/media/circularstd-light-webfont.woff2": "/spotify-react-tailwind/static/media/circularstd-light-webfont.e3a1887c6af907fcbf11.woff2",
+    "static/media/facebook.svg": "/spotify-react-tailwind/static/media/facebook.e9d1a8ce344219755357251915aa5611.svg",
+    "static/media/apple.svg": "/spotify-react-tailwind/static/media/apple.7d5a322098402933935823a473f0e019.svg",
+    "static/media/google.svg": "/spotify-react-tailwind/static/media/google.3393a4f3141bb2e57b839bc14e8c2b3f.svg",
+    "static/media/facebook-squared.svg": "/spotify-react-tailwind/static/media/facebook-squared.e3eb7959feac1595de4a720ae32b2b4b.svg",
     "index.html": "/spotify-react-tailwind/index.html",
-    "main.a577de1a.css.map": "/spotify-react-tailwind/static/css/main.a577de1a.css.map",
-    "main.8b27fbb2.js.map": "/spotify-react-tailwind/static/js/main.8b27fbb2.js.map"
+    "main.b7879a6e.css.map": "/spotify-react-tailwind/static/css/main.b7879a6e.css.map",
+    "main.80dbed5d.js.map": "/spotify-react-tailwind/static/js/main.80dbed5d.js.map"
   },
   "entrypoints": [
-    "static/css/main.a577de1a.css",
-    "static/js/main.8b27fbb2.js"
+    "static/css/main.b7879a6e.css",
+    "static/js/main.80dbed5d.js"
   ]
 }
