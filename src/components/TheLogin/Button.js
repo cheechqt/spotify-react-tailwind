@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useAuthButtonsIconVisibility from "hooks/useAuthButtonsIconsVisibility/useAuthButtonsIconsVisibility";
+import useVisibility from "hooks/useVisibility";
 
 import googleIcon from "components/img/google.svg";
 import facebookIcon from "components/img/facebook-squared.svg";
@@ -11,7 +11,7 @@ function Button({
   classes,
   icon,
 }) {
-  const { isSmallScreen } = useAuthButtonsIconVisibility(toggleVisibilityImage);
+  const { isSmallScreen } = useVisibility(toggleVisibilityImage);
   const [hiddenClass, setHiddenClass] = useState("");
 
   function getHiddenClasses() {

@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import useClickAway from "hooks/useClickAway/useClickAway";
+import useClickAway from "hooks/useClickAway";
+import useVisibility from "hooks/useVisibility";
 import UserMenu from "./UserMenu";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 
 function UserButtons({ name, userImage }) {
+  const { isSmallScreen } = useVisibility(toggleVisibilityImage);
+  const [hiddenClass, setHiddenClass] = useState("");
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const menuRef = useRef();
 
@@ -23,9 +26,17 @@ function UserButtons({ name, userImage }) {
     document.addEventListener("keydown", handleEsc);
     return () => document.removeEventListener("keydown", handleEsc);
   });
+
+  function getHiddenClasses() {
+    return isSmallScreen ? "" : "hidden";
+  }
+
+  function toggleVisibilityImage() {
+    setHiddenClass(getHiddenClasses);
+  }
   return (
     <div className="flex gap-4 justify-end items-center">
-      <button className="text-sm font-bold text-center border border-[#727272] border-opacity-70 shrink-0 text-white rounded-[500px] py-[7px] px-4 m-2 hover:scale-105 hover:border-white hover:bg-black hover:bg-opacity-70">
+      <button className={`hidden md:inline text-sm font-bold text-center border border-[#727272] border-opacity-70 shrink-0 text-white rounded-[500px] py-[7px] px-4 m-2 hover:scale-105 hover:border-white hover:bg-black hover:bg-opacity-70 ${hiddenClass}`}>
         Upgrade
       </button>
       <div className="relative">

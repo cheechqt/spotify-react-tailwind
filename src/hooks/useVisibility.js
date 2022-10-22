@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import { MIN_AUTH_ICONS_VISIBILITY_WIDTH } from "constants/constants";
+import { MIN_VISIBILITY_WIDTH } from "constants/constants";
 import { debounce } from "utils/debounce";
 
 function isCurrentWindowWidthSmall() {
-  return window.innerWidth < MIN_AUTH_ICONS_VISIBILITY_WIDTH;
+  return window.innerWidth < MIN_VISIBILITY_WIDTH;
 }
 
 function isCurrentWindowWidthBig() {
-  return window.innerWidth >= MIN_AUTH_ICONS_VISIBILITY_WIDTH;
+  return window.innerWidth >= MIN_VISIBILITY_WIDTH;
 }
 
-function useLoginButtonsIconVisibility(changeVisibilityCallback) {
+function useVisibility(changeVisibilityCallback) {
   const [isSmallScreen, setIsSmallScreen] = useState(isCurrentWindowWidthSmall);
   const changeWidthTimer = useRef();
 
@@ -45,4 +45,4 @@ function useLoginButtonsIconVisibility(changeVisibilityCallback) {
   };
 }
 
-export default useLoginButtonsIconVisibility;
+export default useVisibility;

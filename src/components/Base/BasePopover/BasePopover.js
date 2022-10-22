@@ -1,6 +1,6 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from "react";
-import useClickAway from "../../../hooks/useClickAway/useClickAway";
-import usePosition from "../../../hooks/usePopover/usePopoverPosition";
+import useClickAway from "../../../hooks/useClickAway";
+import usePosition from "../../../hooks/usePopoverPosition";
 import BaseButton from "../BaseButton";
 import BasePopoverTriangle from "./BasePopoverTriangle";
 

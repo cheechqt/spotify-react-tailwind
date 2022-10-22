@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import useClickAway from "../useClickAway/useClickAway";
+import useClickAway from "../useClickAway";
 import usePosition from "./useContextMenuPosition";
 
 function useContextMenu(items) {

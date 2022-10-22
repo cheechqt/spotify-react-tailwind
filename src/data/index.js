@@ -5,9 +5,8 @@ export const PLAYLIST = [
     title: "Singles",
     link: "bonjr",
     imgUrl: "https://i.scdn.co/image/ab67616d0000b27396d973020ed9aa87c416044f",
-    hoverColor: "rgb(224, 112, 16)",
     artist: "Bonjr",
-    playlistBg: "rgb(224, 112, 16)",
+    playlistBg: "#1E0E46",
     playlistData: [
       {
         index: "1",
@@ -62,9 +61,8 @@ export const PLAYLIST = [
     title: "This Is Burgos",
     link: "thisisburgos",
     imgUrl: "https://thisis-images.scdn.co/37i9dQZF1DZ06evO1QPBZu-large.jpg",
-    hoverColor: "rgb(216, 24, 40)",
     artist: "Burgos",
-    playlistBg: "rgb(216, 24, 40)",
+    playlistBg: "#E36196",
     playlistData: [
       {
         index: "1",
@@ -101,9 +99,8 @@ export const PLAYLIST = [
     title: "The Chats",
     link: "thechats",
     imgUrl: "https://i.scdn.co/image/ab6761610000e5eba43a92d50e11b126604d710e",
-    hoverColor: "rgb(240, 144, 184)",
-    artist: "",
-    playlistBg: "rgb(240, 144, 184)",
+    artist: "The Chats",
+    playlistBg: "#F2F2F2",
     playlistData: [
       {
         index: "1",
@@ -141,9 +138,8 @@ export const PLAYLIST = [
     link: "dailymix1",
     imgUrl:
       "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb2576a1099bd554479e2e0e12/1/en/large",
-    hoverColor: "rgb(192, 32, 40)",
     artist: "LoFi Waiter, Glimlip, Altair Blake and more",
-    playlistBg: "rgb(136, 8, 24)",
+    playlistBg: "#3E51727`",
     playlistData: [
       {
         index: "1",
@@ -180,9 +176,8 @@ export const PLAYLIST = [
     title: "Current Mood 💔",
     link: "currentmood",
     imgUrl: "https://i.scdn.co/image/ab67706c0000bebbc99d011ca0c8cc101307b9a5",
-    hoverColor: "rgb(240, 56, 168)",
-    artist: "",
-    playlistBg: "rgb(240, 56, 168)",
+    artist: "Avril Lavigne, Noah Cyrus, Melanie Martinez and more",
+    playlistBg: "#545454",
     playlistData: [
       {
         index: "1",
@@ -219,9 +214,8 @@ export const PLAYLIST = [
     title: "Opportunities",
     link: "opportunities",
     imgUrl: "https://i.scdn.co/image/ab67616d0000b273c0e5a15dfa6e977873bd5257",
-    hoverColor: "rgb(160, 24, 32)",
     artist: "Deuce",
-    playlistBg: "rgb(160, 24, 32)",
+    playlistBg: "#784105",
     playlistData: [
       {
         index: "1",
@@ -260,9 +254,8 @@ export const PLAYLIST = [
     link: "dailymix2",
     imgUrl:
       "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb32b879883b82cdf8dacdad43/2/en/large",
-    hoverColor: "rgb(136, 152, 152)",
     artist: "LØLØ, Royal & the Serpent, Maggie Lindemann and more",
-    playlistBg: "rgb(136, 152, 152)",
+    playlistBg: "#DBE4E4",
     playlistData: [
       {
         index: "1",
@@ -300,9 +293,8 @@ export const PLAYLIST = [
     link: "dailymix3",
     imgUrl:
       "https://dailymix-images.scdn.co/v2/img/ab6761610000e5eb66516e5a033b9a974efe70c2/3/en/large",
-    hoverColor: "rgb(83, 83, 83)",
     artist: "Ren Avel, Otaku, amies and more",
-    playlistBg: "rgb(83, 83, 83)",
+    playlistBg: "#424A51",
     playlistData: [
       {
         index: "1",
@@ -339,10 +331,9 @@ export const PLAYLIST = [
     title: "Мы обречены",
     link: "Мы обречены",
     imgUrl: "https://i.scdn.co/image/ab6765630000ba8a982b36e9c8ac2d02097e2a98",
-    hoverColor: "rgb(83, 83, 83)",
     artist:
       "У нас в гостях Михаил Фленов, наконец-то. Он давным давно переехал в Канаду — в конце нулевых — и прошел там большую программистскую карьерную лестницу...",
-    playlistBg: "rgb(83, 83, 83)",
+    playlistBg: "#98253B",
     playlistData: [
       {
         index: "1",
@@ -362,9 +353,8 @@ export const PLAYLIST = [
     link: "feelinggood",
     imgUrl:
       "https://mosaic.scdn.co/640/ab67616d0000b2737e00c16ef2e762b617d13ebeab67616d0000b2738fb16768e07d17b71078e5c8ab67616d0000b273c311619d7b02d5c4a6c167f2ab67616d0000b273e80e7dbce3996a1ae5967751",
-    hoverColor: "rgb(240, 144, 184)",
     artist: "",
-    playlistBg: "rgb(240, 144, 184)",
+    playlistBg: "#4F575E",
     playlistData: [
       {
         index: "1",
@@ -402,9 +392,8 @@ export const PLAYLIST = [
     link: "game",
     imgUrl:
       "https://mosaic.scdn.co/640/ab67616d0000b273264a0478cccbc94ac61cb479ab67616d0000b2733dd79a18a8a69206b0705ff1ab67616d0000b2738b3633d0c103f5f2095889bcab67616d0000b273a103966a8ad8cfd49aff0aad",
-    hoverColor: "rgb(232, 24, 48)",
     artist: "Basco, 1nonly, Haarper and more",
-    playlistBg: "rgb(232, 24, 48)",
+    playlistBg: "#E56298",
     playlistData: [
       {
         index: "1",

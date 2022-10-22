@@ -11,6 +11,7 @@ import Audio from "./Audio";
 function Player() {
   const { trackData, changeTrack, isPlaying } = SpotifyState();
 
+
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
@@ -46,7 +47,7 @@ function Player() {
   });
 
   return (
-    <footer className="grid grid-cols-footer py-4 px-4 gap-y-2 gap-x-6 bg-[#181818] border-t-2 border-[#282828] h-[90px]">
+    <footer className="grid md:grid-cols-footer grid-cols-footerSmall py-4 px-4 gap-y-2 gap-x-6 bg-[#181818] border-t-2 border-[#282828] h-[90px]">
       <PlayerLeft trackData={trackData} />
       <div className=" flex flex-col items-center h-[57px]">
         <ControlBox />

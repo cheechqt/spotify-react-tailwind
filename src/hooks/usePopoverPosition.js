@@ -1,24 +1,25 @@
 import { useEffect, useRef, useState } from "react";
-import { MIN_AUTH_ICONS_VISIBILITY_WIDTH } from "constants/constants";
-import { debounce } from "utils/debounce";
+import { MIN_DESKTOP_WIDTH } from "../constants/constants";
+import { debounce } from "../utils/debounce";
 
 function isCurrentWindowWidthSmall() {
-  return window.innerWidth < MIN_AUTH_ICONS_VISIBILITY_WIDTH;
+  return window.innerWidth < MIN_DESKTOP_WIDTH;
 }
 
 function isCurrentWindowWidthBig() {
-  return window.innerWidth >= MIN_AUTH_ICONS_VISIBILITY_WIDTH;
+  return window.innerWidth > MIN_DESKTOP_WIDTH;
 }
 
-function useAuthButtonsIconVisibility(changeVisibilityCallback) {
+function usePopoverPosition(ref, screenChangeCallback) {
   const [isSmallScreen, setIsSmallScreen] = useState(isCurrentWindowWidthSmall);
+  const [target, setTarget] = useState();
   const changeWidthTimer = useRef();
 
   useEffect(() => {
     function handleResize() {
       if (!screenHasBecomeSmall() && !screenHasBecomeBig()) return;
 
-      changeVisibilityCallback();
+      screenChangeCallback();
       clearTimeout(changeWidthTimer.current);
 
       changeWidthTimer.current = setTimeout(() => {
@@ -32,6 +33,24 @@ function useAuthButtonsIconVisibility(changeVisibilityCallback) {
     return () => window.removeEventListener("resize", debounceResize);
   });
 
+  function move(target, offset) {
+    offset = offset || calculateTargetOffset(target);
+
+    ref.current.style.top = `${offset.top}px`;
+    ref.current.style.left = `${offset.left}px`;
+
+    setTarget(target);
+  }
+
+  function calculateTargetOffset(target) {
+    const { top, right, left, height } = target.getBoundingClientRect();
+
+    return {
+      top: isSmallScreen ? top + height * 2 : top - (height / 3) * 2,
+      left: isSmallScreen ? left : right + 30,
+    };
+  }
+
   function screenHasBecomeSmall() {
     return isCurrentWindowWidthSmall() && !isSmallScreen;
   }
@@ -41,8 +60,11 @@ function useAuthButtonsIconVisibility(changeVisibilityCallback) {
   }
 
   return {
+    move,
+    target,
+    setTarget,
     isSmallScreen,
   };
 }
 
-export default useAuthButtonsIconVisibility;
+export default usePopoverPosition;

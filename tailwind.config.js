@@ -25,6 +25,7 @@ module.exports = {
         "playlists-tablet": "repeat(auto-fill, minmax(266px, 1fr))",
         "playlists-desktop": "repeat(auto-fill, minmax(180px, 1fr))",
         footer: "30% 40% 30%",
+        footerSmall: "40% 50% 10%",
         search: "repeat(auto-fill,minmax(180px,1fr))",
         searchMedium: "1fr 1fr",
         libraryTab: "repeat(auto-fill,minmax(var(--cards-column-width),1fr))",

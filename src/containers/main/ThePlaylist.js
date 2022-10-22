@@ -17,10 +17,11 @@ function ThePlaylist() {
   const { trackData, changeTrack } = SpotifyState();
   const [playlistIndex, setPlaylistIndex] = useState(undefined);
   const [isThisPlaying, setIsThisPlaying] = useState(false);
+  const [bgColor, setBgColor] = useState("bg-[#121212]")
   const { path } = useParams();
 
   function changeBg(color) {
-    document.documentElement.style.setProperty("--hover-home-bg", color);
+    setBgColor(`bg-[${color}]`)
   }
 
   useEffect(() => {
@@ -28,16 +29,13 @@ function ThePlaylist() {
   }, [playlistIndex, trackData.trackKey]);
 
   return (
-    <div className="overflow-y-scroll overflow-x-scroll relative mb-[95px] pb-4 text-white">
-      <div className="h-[340px] absolute left-0 right-0 -z-10 bg-gray"></div>
-      <div className="absolute left-0 right- top-[340px] h-[240px] -z-20 bg-red-500"></div>
-      <div className="fixed top-0 right-0 left-0 bottom-0 -z-30  bg-blue-500"></div>
+    <div className="overflow-y-scroll overflow-x-scroll relative pb-4 text-white">
+      <div className={`h-[340px] w-full absolute left-0 top-0 -z-20 bg-gradient-to-t from-[#121212] ${bgColor}`}></div>
+      <div className="absolute top-[340px] right-0 left-0 bottom-0 -z-30 bg-[#121212]"></div>
       <TheHeader />
 
       {PLAYLIST.map((playlist) => {
         if (playlist.link === path) {
-          console.log(playlist);
-
           return (
             <div
               key={playlist.title}

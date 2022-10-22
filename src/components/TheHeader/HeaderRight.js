@@ -2,14 +2,10 @@ import { SpotifyState } from "Context";
 import BaseButton from "components/Base/BaseButton";
 import UserButtons from "./UserButtons";
 
-function UserProfileButtons() {
-
-
+function HeaderRight() {
   const { user } = SpotifyState();
   const name = user?.displayName;
   const userImage = user?.photoURL;
-
-
 
   if (!name) {
     return (
@@ -27,4 +23,4 @@ function UserProfileButtons() {
   return <UserButtons name={name} userImage={userImage} />
 }
 
-export default UserProfileButtons;
+export default HeaderRight;

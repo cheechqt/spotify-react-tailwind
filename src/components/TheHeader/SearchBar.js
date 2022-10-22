@@ -2,7 +2,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 function SearchBar() {
   return (
-    <form className="relative max-w-[368px] w-full" role="search">
+    <form className=" relative max-w-[368px] w-full" role="search">
       <MagnifyingGlassIcon className="h-7 w-7 text-black absolute top-1.5 left-3" />
       <input
         placeholder="What do you want to listen to?"
