@@ -6,6 +6,7 @@ const BaseButton = ({
   children: label,
   onClick: handleOnClick,
   path,
+  disabled = false,
 }) => {
   const typeClasses = primary
     ? "bg-white hover:bg-gray-100 text-[#2e2e2e]"
@@ -25,6 +26,7 @@ const BaseButton = ({
 
   return (
     <button
+      disabled={disabled}
       className={`leading-5 py-[14px] px-[17px] sm:px-[32px] rounded-full hover:scale-105 ${typeClasses} ${classes}`}
       onClick={handleOnClick}
     >

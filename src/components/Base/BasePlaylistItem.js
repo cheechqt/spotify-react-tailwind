@@ -98,22 +98,22 @@ const Playlist = ({
     <div className="group relative overflow-hidden rounded-mb">
       <Link to={`/playlist/${link}`}>
         <div
-          className={`p-4 rounded-mb  duration-200 relative bg-red h-full ${classes} ${bgClasses}`}
+          className={`p-4 rounded-mb  duration-200 relative bg-red h-full ${menu.isOpen && "pointer-events-none"} ${classes} ${bgClasses}`}
           onContextMenu={menu.handleOpen}
           onTouchStart={menu.handleOpen}
         >
           <PlaylistCover url={imgUrl} />
           <PlaylistTitle title={title} />
           <PlaylistDescription description={artist} />
-          {menu.isOpen && (
-            <PlaylistContextMenu
-              menuItems={menu.items}
-              classes="fixed divide-y divide-[#3e3e3e]"
-              ref={menu.ref}
-            />
-          )}
         </div>
       </Link>
+      {menu.isOpen && (
+        <PlaylistContextMenu
+          menuItems={menu.items}
+          classes="fixed divide-y divide-[#3e3e3e]"
+          ref={menu.ref}
+        />
+      )}
       <div
         className="bg-transparent w-11 h-11 rounded-full absolute z-10 right-[25px] top-[124px]"
         onClick={(e) => {

@@ -1,4 +1,13 @@
-function BaseAuthImput({ label, type, value, onChange, placeholder, classes }) {
+function BaseAuthImput({
+  label,
+  type,
+  value,
+  onChange,
+  onBlur,
+  placeholder,
+  classes,
+  errorMessage,
+}) {
   return (
     <>
       <label className="text-sm font-bold block pb-2">{label}</label>
@@ -6,10 +15,11 @@ function BaseAuthImput({ label, type, value, onChange, placeholder, classes }) {
         type={type}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         placeholder={placeholder}
         className={`block text-base p-[14px] w-full rounded-[4px] border-[#878787] border ${classes}`}
       />
-      {/* <div className="mt-4 errorMessage"></div> */}
+      {errorMessage && <div className="mt-1 text-red-500">{errorMessage}</div>}
     </>
   );
 }

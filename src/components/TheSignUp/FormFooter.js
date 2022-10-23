@@ -1,7 +1,7 @@
 import BaseButton from "components/Base/BaseButton";
 import { Link } from "react-router-dom";
 
-function FormFooter({ handleClick }) {
+function FormFooter({ handleClick, disableSubmit }) {
   return (
     <div className="flex flex-col justify-center items-center text-center">
       <p className="text-xs pb-3">
@@ -30,6 +30,7 @@ function FormFooter({ handleClick }) {
         .
       </p>
       <BaseButton
+        disabled={disableSubmit}
         classes="text-base text-[#000] font-bold border w-[155px] bg-[#1ed760] hover:bg-[#1fdf65] whitespace-nowrap mb-6 mt-0 px-12 py-4"
         onClick={handleClick}
       >

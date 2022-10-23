@@ -42,7 +42,7 @@ function BasePopover(_, ref) {
 
   return (
     <div
-      className={`fixed z-30 bg-[#0e72ea] text-white tracking-wide rounded-lg shadow-3xl p-4 w-[330px] select-none transition duration-3000 ${classes}`}
+      className={`fixed z-[100] bg-[#0e72ea] text-white tracking-wide rounded-lg shadow-3xl p-4 w-[330px] select-none transition duration-3000 ${classes}`}
       ref={nodeRef}
     >
       <h3 className="text-lg font-bold mb-2">{title}</h3>
