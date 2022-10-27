@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/spotify-react-tailwind/static/css/main.ca1b85d3.css",
-    "main.js": "/spotify-react-tailwind/static/js/main.eaee18be.js",
+    "main.js": "/spotify-react-tailwind/static/js/main.e6029fe9.js",
     "static/media/circularstd-bolditalic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-bolditalic-webfont.b6b63fb730cc7bd7d795.woff",
     "static/media/circularstd-mediumitalic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-mediumitalic-webfont.c5baacccb284fafdfafe.woff",
     "static/media/circularstd-blackitalic-webfont.woff": "/spotify-react-tailwind/static/media/circularstd-blackitalic-webfont.48e39835629351db200e.woff",
@@ -28,10 +28,10 @@
     "static/media/facebook-squared.svg": "/spotify-react-tailwind/static/media/facebook-squared.e3eb7959feac1595de4a720ae32b2b4b.svg",
     "index.html": "/spotify-react-tailwind/index.html",
     "main.ca1b85d3.css.map": "/spotify-react-tailwind/static/css/main.ca1b85d3.css.map",
-    "main.eaee18be.js.map": "/spotify-react-tailwind/static/js/main.eaee18be.js.map"
+    "main.e6029fe9.js.map": "/spotify-react-tailwind/static/js/main.e6029fe9.js.map"
   },
   "entrypoints": [
     "static/css/main.ca1b85d3.css",
-    "static/js/main.eaee18be.js"
+    "static/js/main.e6029fe9.js"
   ]
 }
