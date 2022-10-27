@@ -8,12 +8,12 @@ import ButtonsGroup from "components/TheLogin/ButtonsGroup";
 import Footer from "components/TheLogin/Footer";
 
 function TheLogin() {
+  
   const navigate = useNavigate();
 
   const handleLogin = async (email, password) => {
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
-      console.log(result);
       navigate("/");
     } catch (error) {
       console.log(error);
