@@ -1,4 +1,4 @@
-function Icon({ value, svgClass }) {
+function Icon({ value, svgClass, pauseClass }) {
   switch (value) {
     case "loop":
       return (
@@ -37,7 +37,7 @@ function Icon({ value, svgClass }) {
           viewBox="-45 0 327 327"
           width=".5em"
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-4 w-4`}
+          className={`h-4 w-4 ${pauseClass}`}
         >
           <path d="m158 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0" />
           <path d="m8 0h71c4.417969 0 8 3.582031 8 8v311c0 4.417969-3.582031 8-8 8h-71c-4.417969 0-8-3.582031-8-8v-311c0-4.417969 3.582031-8 8-8zm0 0" />

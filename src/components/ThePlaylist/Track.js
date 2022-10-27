@@ -18,7 +18,7 @@ function Track({ song, playlist }) {
     } else {
       setThisSong(false);
     }
-  });
+  }, [song.link, trackData.track, isPlaying]);
 
   return (
     <div
@@ -38,14 +38,18 @@ function Track({ song, playlist }) {
             PLAYLIST.indexOf(playlist),
             playlist.playlistData.indexOf(song)
           );
-                  if (thisSong && isPlaying) {
-                    setIsPlaying(false);
-                  } else {
-                    setIsPlaying(true);
-                  }
+          if (thisSong && isPlaying) {
+            setIsPlaying(false);
+          } else {
+            setIsPlaying(true);
+          }
         }}
       >
-        <Icon value={thisSong ? "pause" : "play"} svgClass="fill-[#fff]" />
+        <Icon
+          value={thisSong ? "pause" : "play"}
+          svgClass="fill-[#fff]"
+          pauseClass="fill-[#fff]"
+        />
       </button>
 
       {thisSong ? (
@@ -58,7 +62,7 @@ function Track({ song, playlist }) {
         <p className="group-hover:opacity-0">{song.index}</p>
       )}
 
-      {playlist.type === "album" ? "" : <img src={song.songimg} img="song" />}
+      {playlist.type === "album" ? "" : <img src={song.songimg} img="album cover" />}
 
       <span>
         <p className="text-base font-bold text-white">{song.songName}</p>

@@ -6,6 +6,7 @@ function PlayButton({
   classes = "bg-white",
   opacityClasses = false,
   svgClass,
+  pauseClass,
 }) {
   const { setIsPlaying, isPlaying } = SpotifyState();
   const hideClasses = opacityClasses
@@ -28,6 +29,7 @@ function PlayButton({
     >
       <Icon
         svgClass={svgClass}
+        pauseClass={pauseClass}
         value={isThisPlaying && isPlaying ? "pause" : "play"}
       />
     </div>

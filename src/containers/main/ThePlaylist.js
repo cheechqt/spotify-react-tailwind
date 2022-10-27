@@ -47,17 +47,18 @@ function ThePlaylist() {
             >
               <Details playlistData={playlist} />
 
-              <div className="flex items-center flex-row py-6 px-8 relative">
-                <button
-                  className="border-none bg-transparent"
-                  onClick={() => changeTrack([PLAYLIST.indexOf(playlist), 0])}
+              <div className="flex items-center flex-row py-6 px-8 relative z-10">
+                <div
+                  className="border-none bg-red"
+                  onClick={() => changeTrack(PLAYLIST.indexOf(playlist), 0)}
                 >
                   <PlayButton
                     isThisPlaying={isThisPlaying}
                     classes="bg-[#1DB954] mr-8 w-[56px] h-[56px]"
                     svgClass="w-7 h-7"
+                    pauseClass="w-[22px] h-[22px]"
                   />
-                </button>
+                </div>
                 <HeartIcon className="w-7 h-7 text-[#B3B3B3] hover:text-[#fff]" />
                 <EllipsisHorizontalIcon className="w-7 h-7 text-[#B3B3B3] hover:text-[#fff]  ml-6" />
               </div>
@@ -75,12 +76,12 @@ function ThePlaylist() {
               <div className="md:py-0 md:px-8 py-0 px-4">
                 {playlist.playlistData.map((song) => {
                   return (
-                    <button
+                    <div
                       key={song.index}
                       className="block w-full bg-none border border-transparent rounded-md"
                     >
                       <Track playlist={playlist} song={song} />
-                    </button>
+                    </div>
                   );
                 })}
               </div>
