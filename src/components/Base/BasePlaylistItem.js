@@ -98,7 +98,9 @@ const Playlist = ({
     <div className="group relative overflow-hidden rounded-mb">
       <Link to={`/playlist/${link}`}>
         <div
-          className={`p-4 rounded-mb  duration-200 relative bg-red h-full ${menu.isOpen && "pointer-events-none"} ${classes} ${bgClasses}`}
+          className={`p-4 rounded-mb  duration-200 relative bg-red h-full ${
+            menu.isOpen && "pointer-events-none"
+          } ${classes} ${bgClasses}`}
           onContextMenu={menu.handleOpen}
           onTouchStart={menu.handleOpen}
         >
@@ -115,14 +117,14 @@ const Playlist = ({
         />
       )}
       <div
-        className="bg-transparent w-11 h-11 rounded-full absolute z-10 right-[25px] top-[124px]"
+        className="bg-transparent w-11 h-11 rounded-full absolute z-[100] right-[25px] top-[124px]"
         onClick={(e) => {
           e.stopPropagation();
           changeTrack(index, 0);
         }}
       >
         {" "}
-        {name && (
+        {name && !menu.isOpen && (
           <PlayButton
             isThisPlaying={isThisPlaying}
             opacityClasses={true}

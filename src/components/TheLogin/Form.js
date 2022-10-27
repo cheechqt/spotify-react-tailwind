@@ -49,7 +49,7 @@ function Form({ handleClick }) {
         Forgot your password?
       </a>
 
-      <FormFooter handleClick={() => handleClick(email, password)} />
+      <FormFooter handleClick={() => handleClick(email.value, password.value)} />
     </div>
   );
 }
