@@ -1,4 +1,4 @@
-# Netflix single page clone
+# Spotify clone
 
 ## Ссылки
 
