@@ -28,10 +28,10 @@ function ThePlaylist() {
   }, [playlistIndex, trackData.trackKey]);
 
   return (
-    <div className="flex-1 overflow-auto relative h-full relative pb-4 text-white bg-[#121212]">
+    <div className="flex-1 overflow-auto relative h-full pb-4 text-white bg-[#121212]">
       <div>
         <div className="h-[333px] bg-gradient-to-t from-[#121212] bg-[#1E0E46] absolute z-20 w-full"></div>
-        <div className="h-full bg-[#121212] absolute z-10 w-full"></div>
+        <div className="h-full bg-[#121212] absolute w-full"></div>
       </div>
       <TheHeader />
 
