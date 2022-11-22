@@ -1,4 +1,7 @@
 # Spotify clone
+## Quick Review
+![Example](https://github.com/cheechqt/boost-eshop/blob/main/qReview.gif"Spotify Clone")
+
 
 ## Ссылки
 
