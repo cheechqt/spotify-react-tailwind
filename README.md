@@ -1,6 +1,6 @@
 # Spotify clone
 ## Quick Review
-![Example](https://github.com/cheechqt/spotify-react-tailwind/blob/main/qReview.gif"Spotify Clone")
+![Example](https://github.com/cheechqt/spotify-react-tailwind/blob/main/qReview.gif "Spotify Clone")
 
 
 ## Ссылки
